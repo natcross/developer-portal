@@ -1,0 +1,28 @@
+{% extends "!layout.html" %}
+{% set script_files = script_files + [
+    '_static/js/bootstrap.min.js',
+    '_static/js/main.js',
+    '_static/js/bootstrap.sphinx.js'
+  ]
+%}
+{% block relbar1 %}{% endblock %}
+
+{% block content %}
+  <script type="text/javascript" src="//use.typekit.net/quz2hat.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script> 
+  <div id="wrapper" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-lg-2">
+        {% block sidebar1 %}{{ sidebar() }}{% endblock %}
+      </div>
+      <div class="col-sm-9 col-lg-10 content">    
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{# put the sidebar before the body #}
+{% block sidebar2 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
+{% set pygments_style = 'monokai' %}
