@@ -7791,62 +7791,75 @@ h2 {
 .sphinxsidebarwrapper ul, .sphinxsidebarwrapper li {
   list-style: none;
 }
-
 /* line 187, sass/default.scss */
+.sphinxsidebarwrapper .toctree-l1 ul {
+  padding: 0;
+}
+/* line 190, sass/default.scss */
+.sphinxsidebarwrapper .toctree-l1 ul li {
+  font-size: 0.8em;
+  padding: 0 0 5px 0;
+}
+/* line 194, sass/default.scss */
+.sphinxsidebarwrapper .toctree-l1 ul li a {
+  color: #868279;
+}
+
+/* line 202, sass/default.scss */
 .examples {
   background: #444444;
   color: white;
   margin-bottom: -400px;
   padding-bottom: 400px;
 }
-/* line 194, sass/default.scss */
+/* line 209, sass/default.scss */
 .examples .code-selector {
   border-radius: 0;
   border: none;
   background: none;
 }
-/* line 199, sass/default.scss */
+/* line 214, sass/default.scss */
 .examples .code-selector .nav {
   border-radius: 0;
   padding: 15px 5px;
   color: #444444;
   border-bottom: 4px solid black;
 }
-/* line 206, sass/default.scss */
+/* line 221, sass/default.scss */
 .examples .code-selector .code {
   color: #FFF0E7;
 }
-/* line 211, sass/default.scss */
+/* line 226, sass/default.scss */
 .examples .code-box {
   background: none;
   border: none;
 }
-/* line 215, sass/default.scss */
+/* line 230, sass/default.scss */
 .examples .code-box .nav {
   display: none;
 }
-/* line 219, sass/default.scss */
+/* line 234, sass/default.scss */
 .examples .code-box pre {
   background: none;
 }
 
-/* line 225, sass/default.scss */
+/* line 240, sass/default.scss */
 #api-documentation > .row .examples {
   top: -110px;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 231, sass/default.scss */
+/* line 246, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav {
   display: block;
   border-radius: 0;
   z-index: 100;
 }
-/* line 236, sass/default.scss */
+/* line 251, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav.affix {
   top: 0;
 }
-/* line 240, sass/default.scss */
+/* line 255, sass/default.scss */
 #api-documentation > .row .examples .code-box .tab-content {
   display: none;
 }

@@ -182,6 +182,21 @@ h2 {
     ul, li {
         list-style: none;
     }
+
+    .toctree-l1 {
+        ul {
+            padding: 0;
+
+            li {
+                font-size: 0.8em;
+                padding: 0 0 5px 0;
+
+                a {
+                    color: $grey-medium;
+                }
+            }
+        }
+    }
 }
 
 .examples {
