@@ -153,6 +153,7 @@ The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pus
 .. code-box::
 
   .. code-block:: ruby
+
     # Constructs a Client instance if it receives valid arguments or will raise an ArgumentError.
     #
     # @param client_id [Integer] your RJMetrics Client ID
@@ -162,7 +163,6 @@ The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pus
 
     # Checks if the provided Client ID and API Key are valid credentials by requestin from the RJMetrics API Sandbox.
     def authenticated?
-
 
     # Sends data to RJMetrics Data Import API.
     #
