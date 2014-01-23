@@ -14,6 +14,8 @@
 
 import sys
 import os
+from sphinx.highlighting import lexers
+from pygments.lexers.web import PhpLexer
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -258,3 +260,6 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# Don't require tags around php code
+lexers['php'] = PhpLexer(startinline=True)
