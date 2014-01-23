@@ -33,6 +33,7 @@ class SplitPane(Directive):
 
         resultnode = splitpane()
         resultnode.extend(panes)
+        resultnode.set_class('split-pane');
 
         return [resultnode]
 
