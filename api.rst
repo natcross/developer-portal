@@ -50,7 +50,7 @@ Authentication
 
     .. code-block:: bash
 
-      curl -v https://connect.rjmetrics.com/v2/client/<clientid>/:endpoint?apikey=<apikey>
+      curl -v https://connect.rjmetrics.com/v2/client/:cid/:endpoint?apikey=:apikey
 
     .. code-block:: php
 
@@ -139,7 +139,7 @@ Test Environment
 
     .. code-block:: bash
 
-      curl -v https://sandbox-connect.rjmetrics.com/v2/client/<clientid>/:endpoint?apikey=<apikey>
+      curl -v https://sandbox-connect.rjmetrics.com/v2/client/:cid/:endpoint?apikey=:apikey
 
     .. code-block:: php
 
@@ -216,7 +216,11 @@ Upsert
 
     .. code-block:: bash
 
-      curl -X POST -d @filename https://connect.rjmetrics.com/v2/client/:cid/table/:table/data?apikey=<apikey> --header "Content-type: application/json"
+      curl -X POST -d @filename https://connect.rjmetrics.com/v2/client/:cid/table/:table/data?apikey=:apikey --header "Content-type: application/json"
+
+      :cid - your client id
+      :table - table name
+      :apikey - your API key
 
       Example 1: Single data point
 
