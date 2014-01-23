@@ -72,6 +72,7 @@
 
     // Add Note, Warning styles. (BS v2,3 compatible).
     $('div.note').addClass('alert alert-info');
+    $('div.important').addClass('alert alert-info');
     $('div.warning').addClass('alert alert-danger alert-error');
 
     // Inline code styles to Bootstrap style.
