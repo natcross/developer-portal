@@ -69,7 +69,6 @@ h2 {
 .nav-pills {
     background-color: $grey-light;
     font-size: 1.2em;
-    // min-height: $min-height;
 
     > li {
         &.active {
@@ -119,7 +118,6 @@ h2 {
 }
 
 .code-box {
-    width: 100%;
     background: $grey-light;
     border: 1px solid #BFBFBF;
     border-radius: 7px;
@@ -226,6 +224,8 @@ h2 {
     .code-box {
         background: none;
         border: none;
+        margin-left: 0;
+        margin-right: 0;
 
         .nav {
             display: none;
@@ -235,6 +235,10 @@ h2 {
             background: none;
         }
     }    
+}
+
+#wrapper > .row {
+    margin-right: 0;
 }
 
 #api-documentation > .row .examples { 
@@ -254,6 +258,24 @@ h2 {
         }
         .tab-content {
             display: none;
+        }
+    }
+}
+
+.section {
+    $marginHorizontal: 30px;
+
+    h1, h2, p, .code-box {
+        margin-left: $marginHorizontal;
+        margin-right: $marginHorizontal;
+    }
+
+    .split-pane {
+        margin-right: 0;
+
+        .section:first-child {
+            padding-left: 15+$marginHorizontal;
+            padding-right: 15+$marginHorizontal;
         }
     }
 }
