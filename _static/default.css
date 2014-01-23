@@ -7836,7 +7836,7 @@ h2 {
 }
 
 /* line 233, sass/default.scss */
-.section h1, .section h2, .section h3, .section .code-box {
+.section h1, .section h2, .section h3, .section p, .section .code-box {
   margin-left: 30px;
   margin-right: 30px;
 }

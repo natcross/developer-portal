@@ -230,7 +230,7 @@ h2 {
 .section {
     $marginHorizontal: 30px;
 
-    h1, h2, h3, .code-box {
+    h1, h2, h3, p, .code-box {
         margin-left: $marginHorizontal;
         margin-right: $marginHorizontal;
     }
