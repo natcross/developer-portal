@@ -25,9 +25,9 @@ class SplitPane(Directive):
             pane = nodes.section('')
             pane.append(child)
             if i % 2 == 0:
-                pane.set_class('col-sm-8')
+                pane.set_class('col-sm-7')
             else:
-                pane.set_class('col-sm-4')
+                pane.set_class('col-sm-5')
                 pane.set_class('examples')
             panes.append(pane)
 
