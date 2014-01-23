@@ -32,6 +32,10 @@ h2 {
     font-size: 2em;
 }
 
+.admonition-title {
+    font-weight: bold;
+}
+
 .content {
     padding: 24px 0;
 }
@@ -197,6 +201,50 @@ h2 {
     }
 }
 
+
+#wrapper > .row {
+    margin-right: 0;
+}
+
+#api-documentation > .row .examples { 
+    top: -110px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .code-box {
+        .nav {
+            display: block;
+            border-radius: 0;
+            z-index: 100;
+
+            &.affix {
+                top: 0;
+            }
+        }
+        .tab-content {
+            display: none;
+        }
+    }
+}
+
+.section {
+    $marginHorizontal: 30px;
+
+    h1, h2, h3, .code-box {
+        margin-left: $marginHorizontal;
+        margin-right: $marginHorizontal;
+    }
+
+    .split-pane {
+        margin-right: 0;
+
+        > .section:first-child {
+            padding-left: 15+$marginHorizontal;
+            padding-right: 15+$marginHorizontal;
+        }
+    }
+}
+
 .examples {
     background: $grey-dark;
     color: $white;
@@ -235,49 +283,6 @@ h2 {
             background: none;
         }
     }    
-}
-
-#wrapper > .row {
-    margin-right: 0;
-}
-
-#api-documentation > .row .examples { 
-    top: -110px;
-    padding-left: 0;
-    padding-right: 0;
-
-    .code-box {
-        .nav {
-            display: block;
-            border-radius: 0;
-            z-index: 100;
-
-            &.affix {
-                top: 0;
-            }
-        }
-        .tab-content {
-            display: none;
-        }
-    }
-}
-
-.section {
-    $marginHorizontal: 30px;
-
-    h1, h2, p, .code-box {
-        margin-left: $marginHorizontal;
-        margin-right: $marginHorizontal;
-    }
-
-    .split-pane {
-        margin-right: 0;
-
-        .section:first-child {
-            padding-left: 15+$marginHorizontal;
-            padding-right: 15+$marginHorizontal;
-        }
-    }
 }
 
 @import 'pygments-api';
