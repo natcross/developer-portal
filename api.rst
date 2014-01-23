@@ -44,7 +44,8 @@ Authentication
 
     You can authenticate to the API by providing your API key as a GET parameter on your request.
 
-    **Important**: This key has write access to your RJMetrics data warehouse. Do not distribute this key to untrusted third parties.
+    .. important::
+      This key has write access to your RJMetrics data warehouse. Do not distribute this key to untrusted third parties.
 
   .. code-box::
 
@@ -54,11 +55,9 @@ Authentication
 
     .. code-block:: php
 
-      <?php
       $client = new \RJMetrics\Client($clientId, $apiKey);
       if($client->authenticate())
         // connected successfully
-      ?>
 
     .. code-block:: ruby
 
@@ -143,13 +142,11 @@ Test Environment
 
     .. code-block:: php
 
-      <?php
       $client->pushData(
         "table_name",
         $test_data,
         \RJMetrics\Client::SANDBOX_BASE
       );
-      ?>
 
     .. code-block:: ruby
 
@@ -199,7 +196,8 @@ Upsert
     - Each data point must contain a ``keys`` field. The ``keys`` field should specify which fields in the records represent the primary key(s);
     - An array of data must contain no more than 100 individual data points.
 
-    **Important**: Each data point in your data warehouse will be uniquely indexed by the fields specified in ``keys``. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.
+    .. important::
+      Each data point in your data warehouse will be uniquely indexed by the fields specified in ``keys``. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.
 
     **Tables**
 
@@ -256,12 +254,10 @@ Upsert
 
     .. code-block:: php
 
-      <?php
       $client->pushData(
         "table_name",
         $test_data
       );
-      ?>
 
       Example 1: Single data point
 
