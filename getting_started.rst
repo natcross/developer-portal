@@ -26,12 +26,10 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
   .. code-block:: php
 
-    <?php
      echo "Hello World!";
      function($input) {
       return $input;
      }
-    ?>
     
     
 

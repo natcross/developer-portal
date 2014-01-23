@@ -7689,13 +7689,13 @@ h2 {
   background-color: #f4f4f4;
   font-size: 1.2em;
 }
-/* line 76, sass/default.scss */
+/* line 75, sass/default.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover {
   font-weight: bold;
   color: #444444;
   background-color: inherit;
 }
-/* line 81, sass/default.scss */
+/* line 80, sass/default.scss */
 .nav-pills > li.active > a:after, .nav-pills > li.active > a:hover:after {
   content: '';
   position: relative;
@@ -7709,17 +7709,17 @@ h2 {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
-/* line 97, sass/default.scss */
+/* line 96, sass/default.scss */
 .nav-pills > li a {
   padding-left: 30px;
   color: #444444;
 }
 
-/* line 106, sass/default.scss */
+/* line 105, sass/default.scss */
 .rjm-sidebar .nav .nav {
   margin-bottom: 8px;
 }
-/* line 110, sass/default.scss */
+/* line 109, sass/default.scss */
 .rjm-sidebar .nav .nav li > a {
   padding-top: 3px;
   padding-bottom: 3px;
@@ -7728,15 +7728,14 @@ h2 {
   color: #868279;
 }
 
-/* line 121, sass/default.scss */
+/* line 120, sass/default.scss */
 .code-box {
-  width: 100%;
   background: #f4f4f4;
   border: 1px solid #BFBFBF;
   border-radius: 7px;
   margin-bottom: 20px;
 }
-/* line 128, sass/default.scss */
+/* line 126, sass/default.scss */
 .code-box .nav {
   background: #E3E3E3;
   width: 100%;
@@ -7745,7 +7744,7 @@ h2 {
   clear: both;
   overflow: hidden;
 }
-/* line 136, sass/default.scss */
+/* line 134, sass/default.scss */
 .code-box .nav li {
   float: left;
   margin: 5px 5px;
@@ -7754,25 +7753,25 @@ h2 {
   font-weight: 400;
   text-transform: uppercase;
 }
-/* line 144, sass/default.scss */
+/* line 142, sass/default.scss */
 .code-box .nav li a {
   padding: 2px 10px;
 }
-/* line 147, sass/default.scss */
+/* line 145, sass/default.scss */
 .code-box .nav li a:hover {
   background: #444444;
   border-radius: 5px;
   color: #C5D0D3;
   cursor: pointer;
 }
-/* line 156, sass/default.scss */
+/* line 154, sass/default.scss */
 .code-box .nav li.active a {
   background: #444444;
   border-radius: 5px;
   color: #C5D0D3;
   cursor: pointer;
 }
-/* line 166, sass/default.scss */
+/* line 164, sass/default.scss */
 .code-box .code {
   clear: both;
   border: none;
@@ -7780,59 +7779,61 @@ h2 {
   margin: 0;
   padding: 15px 20px;
 }
-/* line 173, sass/default.scss */
+/* line 171, sass/default.scss */
 .code-box .code pre {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 182, sass/default.scss */
+/* line 180, sass/default.scss */
 .sphinxsidebarwrapper ul, .sphinxsidebarwrapper li {
   list-style: none;
 }
-/* line 187, sass/default.scss */
+/* line 185, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul {
   padding: 0;
 }
-/* line 190, sass/default.scss */
+/* line 188, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li {
   font-size: 0.8em;
   padding: 0 0 5px 0;
 }
-/* line 194, sass/default.scss */
+/* line 192, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li a {
   color: #868279;
 }
 
-/* line 202, sass/default.scss */
+/* line 200, sass/default.scss */
 .examples {
   background: #444444;
   color: white;
   margin-bottom: -400px;
   padding-bottom: 400px;
 }
-/* line 209, sass/default.scss */
+/* line 207, sass/default.scss */
 .examples .code-selector {
   border-radius: 0;
   border: none;
   background: none;
 }
-/* line 214, sass/default.scss */
+/* line 212, sass/default.scss */
 .examples .code-selector .nav {
   border-radius: 0;
   padding: 15px 5px;
   color: #444444;
   border-bottom: 4px solid black;
 }
-/* line 221, sass/default.scss */
+/* line 219, sass/default.scss */
 .examples .code-selector .code {
   color: #FFF0E7;
 }
-/* line 226, sass/default.scss */
+/* line 224, sass/default.scss */
 .examples .code-box {
   background: none;
   border: none;
+  margin-left: 0;
+  margin-right: 0;
 }
 /* line 230, sass/default.scss */
 .examples .code-box .nav {
@@ -7844,24 +7845,44 @@ h2 {
 }
 
 /* line 240, sass/default.scss */
+#wrapper > .row {
+  margin-right: 0;
+}
+
+/* line 244, sass/default.scss */
 #api-documentation > .row .examples {
   top: -110px;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 246, sass/default.scss */
+/* line 250, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav {
   display: block;
   border-radius: 0;
   z-index: 100;
 }
-/* line 251, sass/default.scss */
+/* line 255, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav.affix {
   top: 0;
 }
-/* line 255, sass/default.scss */
+/* line 259, sass/default.scss */
 #api-documentation > .row .examples .code-box .tab-content {
   display: none;
+}
+
+/* line 268, sass/default.scss */
+.section h1, .section h2, .section p, .section .code-box {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+/* line 273, sass/default.scss */
+.section .split-pane {
+  margin-right: 0;
+}
+/* line 276, sass/default.scss */
+.section .split-pane .section:first-child {
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 /* line 2, sass/pygments-api.scss */
