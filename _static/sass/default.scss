@@ -230,18 +230,13 @@ h2 {
 .section {
     $marginHorizontal: 30px;
 
-    h1, h2, h3, .code-box {
+    h1, h2, h3, p, .code-box, .alert {
         margin-left: $marginHorizontal;
         margin-right: $marginHorizontal;
     }
 
     .split-pane {
         margin-right: 0;
-
-        > .section:first-child {
-            padding-left: 15+$marginHorizontal;
-            padding-right: 15+$marginHorizontal;
-        }
     }
 }
 

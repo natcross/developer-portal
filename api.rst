@@ -210,95 +210,38 @@ Upsert
     - Typically, one type of 'thing' will correspond to one table. For example, a typical eCommerce company might have a 'customer', 'order', 'order_item', and 'product' table.
     - Table names must be alphanumeric (plus underscores). Bad table names will result in a ``400 Bad Request`` return code.
 
-  .. code-box::
+  .. compound::
 
-    .. code-block:: bash
+    .. code-box::
 
-      curl -X POST -d @filename https://connect.rjmetrics.com/v2/client/:cid/table/:table/data?apikey=:apikey --header "Content-type: application/json"
+      .. code-block:: bash
 
-      :cid - your client id
-      :table - table name
-      :apikey - your API key
+        curl -X POST -d @filename https://connect.rjmetrics.com/v2/client/:cid/table/:table/data?apikey=:apikey --header "Content-type: application/json"
 
-      Example 1: Single data point
-
-      {
-        "keys": ["id"],
-        "id": 1,
-        "email": "joe@schmo.com",
-        "status": "pending",
-        "created_at": "2012-08-01 14:22:32"
-      }
-
-      Example 2: Array of data points
-
-      [{
-        "keys": ["id"],
-        "id": 1,
-        "email": "joe@schmo.com",
-        "status": "pending",
-        "created_at": "2012-08-01 14:22:32"
-      },{
-        "keys": ["id"],
-        "id": 2,
-        "email": "anne@schmo.com",
-        "status": "pending",
-        "created_at": "2012-08-03 23:12:30"
-      },{
-        "keys": ["id"],
-        "id": 1,
-        "email": "joe@schmo.com",
+        :cid - your client id
+        :table - table name
+        :apikey - your API key
         "status": "complete",
         "created_at": "2012-08-05 04:51:02"
       }]
 
-    .. code-block:: php
+      .. code-block:: php
 
-      $client->pushData(
-        "table_name",
-        $test_data
-      );
+        $client->pushData(
+          "table_name",
+          $test_data
+        );
 
-      Example 1: Single data point
+      .. code-block:: ruby
 
-      {
-        "keys": ["id"],
-        "id": 1,
-        "email": "joe@schmo.com",
-        "status": "pending",
-        "created_at": "2012-08-01 14:22:32"
-      }
+        client.pushData(
+          "table_name",
+          test_data
+        )
 
-      Example 2: Array of data points
+    Example 1: Single data point
 
-      [{
-        "keys": ["id"],
-        "id": 1,
-        "email": "joe@schmo.com",
-        "status": "pending",
-        "created_at": "2012-08-01 14:22:32"
-      },{
-        "keys": ["id"],
-        "id": 2,
-        "email": "anne@schmo.com",
-        "status": "pending",
-        "created_at": "2012-08-03 23:12:30"
-      },{
-        "keys": ["id"],
-        "id": 1,
-        "email": "joe@schmo.com",
-        "status": "complete",
-        "created_at": "2012-08-05 04:51:02"
-      }]
-
-    .. code-block:: ruby
-
-      client.pushData(
-        "table_name",
-        test_data
-      )
-
-      Example 1: Single data point
+    .. code-block:: js
 
       {
         "keys": ["id"],
@@ -308,7 +251,9 @@ Upsert
         "created_at": "2012-08-01 14:22:32"
       }
 
-      Example 2: Array of data points
+    Example 2: Array of data points
+
+    .. code-block:: js
 
       [{
         "keys": ["id"],
