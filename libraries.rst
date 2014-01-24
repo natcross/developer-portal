@@ -101,7 +101,7 @@ The PHP client has three methods: ``__construct``, ``authenticate``, and ``pushD
      */
     public function pushData($tableName, $data, $url = self::API_BASE) { ... }
 
-For more information, you can see the `documentation for Httpful <http://phphttpclient.com/>`_ or `view the library source on Github <https://github.com/RJMetrics/RJMetrics-php>`_.
+For more information, you can see the `documentation for Httpful <http://phphttpclient.com/>`_ or `view the source on Github <https://github.com/RJMetrics/RJMetrics-php>`_.
 
 
 
