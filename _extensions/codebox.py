@@ -24,6 +24,7 @@ class CodeBox(Directive):
         'curl':            'CURL',
         'bash':            'CURL',
         'ruby':            'Ruby',
+        'clojure':         'Clojure',
         'php':             'PHP',
         'yaml':            'YAML',
         'jinja':           'Twig',

@@ -16,6 +16,8 @@ API Documentation
 
     .. code-block:: ruby
 
+    .. code-block:: clojure
+
 =============================
 Overview
 =============================
@@ -65,6 +67,13 @@ Authentication
       if client.authenticated?
         # connected successfully
 
+    .. code-block:: clojure
+
+      (let [client {:client-id .. :api-key ..}]
+        (when (rjmetrics/authenticated? client)
+              ;; connected successfully
+              ))
+
 =============================
 Return Codes
 =============================
@@ -77,34 +86,14 @@ Return Codes
 
     Generally speaking, codes in the 2xx range indicate a successful transaction, codes in the 4xx range indicate a bad request, and codes in the 5xx range indicate an error on our end. If errors in the 5xx range persist, please contact RJMetrics support at support@rjmetrics.com.
 
-  .. code-box::
+  .. code-block:: bash
 
-    .. code-block:: bash
-
-      200 OK - request was successful.
-      201 Created - new data was added as a result of the request.
-      400 Bad request - Your request was missing a required parameter.
-      401 Unauthorized - Authorization failed. Double check your API key.
-      404 Not Found - The resource you are looking for does not exist.
-      500 Server Error - Something went wrong on RJMetrics' end.
-
-    .. code-block:: php
-
-      200 OK - request was successful.
-      201 Created - new data was added as a result of the request.
-      400 Bad request - Your request was missing a required parameter.
-      401 Unauthorized - Authorization failed. Double check your API key.
-      404 Not Found - The resource you are looking for does not exist.
-      500 Server Error - Something went wrong on RJMetrics' end.
-
-    .. code-block:: ruby
-
-      200 OK - request was successful.
-      201 Created - new data was added as a result of the request.
-      400 Bad request - Your request was missing a required parameter.
-      401 Unauthorized - Authorization failed. Double check your API key.
-      404 Not Found - The resource you are looking for does not exist.
-      500 Server Error - Something went wrong on RJMetrics' end.
+    200 OK - request was successful.
+    201 Created - new data was added as a result of the request.
+    400 Bad request - Your request was missing a required parameter.
+    401 Unauthorized - Authorization failed. Double check your API key.
+    404 Not Found - The resource you are looking for does not exist.
+    500 Server Error - Something went wrong on RJMetrics' end.
 
 =============================
 Versioning
@@ -156,6 +145,14 @@ Test Environment
         Client::SANDBOX_BASE
       )
 
+    .. code-block:: clojure
+
+      (let [client {:client-id .. :api-key ..}]
+        (rjmetrics/push-data client
+                             "table_name"
+                             test-data
+                             rjmetrics/SANDBOX-BASE))
+
 =============================
 Methods
 =============================
@@ -182,6 +179,8 @@ Status
     .. code-block:: php
 
     .. code-block:: ruby
+
+    .. code-block:: clojure
 
 Upsert
 -----------------------------
@@ -238,6 +237,20 @@ Upsert
           "table_name",
           test_data
         )
+
+      .. code-block:: ruby
+
+        client.pushData(
+          "table_name",
+          test_data
+        )
+
+      .. code-block:: clojure
+
+        (let [client {:client-id .. :api-key ..}]
+          (rjmetrics/push-data client
+                               "table_name"
+                               test-data))
 
     Example 1: Single data point
 
