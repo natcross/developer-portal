@@ -24,10 +24,8 @@ Add the following to your project's ``composer.json``:
 
 .. _Composer: https://getcomposer.org
 
-.. code-box::
-
   .. code-block:: js
-  
+
     {
       ...
       "repositories": [
@@ -42,14 +40,11 @@ Add the following to your project's ``composer.json``:
 
 Now, you can use the library in your script, like this:
 
-.. code-box::
-
   .. code-block:: php
 
     <?php
 
     require 'vendor/autoload.php';
-
     $client = new \RJMetrics\Client($myClientId, $myApiKey);
 
     /* do stuff with $client */
@@ -60,8 +55,6 @@ Usage
 -----------------------------
 
 The PHP client has three methods: ``__construct``, ``authenticate``, and ``pushData``.
-
-.. code-box::
 
   .. code-block:: php
 
@@ -120,23 +113,17 @@ Installation
 
 The RJMetrics Ruby client library is available as a gem:
 
-.. code-box::
-
   .. code-block:: bash
 
     gem install rjmetrics-client
 
 You can also install it via bundler by adding the following line:
 
-.. code-box::
-
   .. code-block:: ruby
 
     gem 'rjmetrics-client'
 
 Now, you can use the library like this:
-
-.. code-box::
 
   .. code-block:: ruby
 
@@ -149,8 +136,6 @@ Usage
 ----------------------------
 
 The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pushData``.
-
-.. code-box::
 
   .. code-block:: ruby
 
