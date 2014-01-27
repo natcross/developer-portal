@@ -14,6 +14,13 @@ if that doesn't work, do:
 easy_install sphinx==1.2
 ```
 
+As root, install additional Sphinx documentation domains:
+
+```
+easy_install -U sphinxcontrib-phpdomain
+easy_install -U sphinxcontrib-rubydomain
+```
+
 Then, from the root of the repo, run
 
 ```bash
