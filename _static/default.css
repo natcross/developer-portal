@@ -7641,37 +7641,56 @@ h1 {
   font-size: 3em;
 }
 
-/* line 31, sass/default.scss */
+/* line 28, sass/default.scss */
 h2 {
   font-size: 2em;
 }
 
-/* line 35, sass/default.scss */
+/* line 29, sass/default.scss */
+dt {
+  font-weight: normal;
+}
+
+/**** Sphinx specific items ***/
+/* line 32, sass/default.scss */
 .admonition-title {
   font-weight: bold;
 }
 
-/* line 39, sass/default.scss */
+/* line 35, sass/default.scss */
+.descname {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/**** End Sphinx items ***/
+/* line 41, sass/default.scss */
 .content {
   padding: 24px 0;
 }
 
-/* line 44, sass/default.scss */
+/* line 46, sass/default.scss */
 .intro p {
   font-size: 1.2em;
 }
 
-/* line 49, sass/default.scss */
+/* line 51, sass/default.scss */
 .headerlink {
   display: none;
 }
 
-/* line 53, sass/default.scss */
+/* line 55, sass/default.scss */
 .dashed {
   border-top: 1px dashed #d2d0d0;
 }
 
-/* line 57, sass/default.scss */
+/* line 59, sass/default.scss */
+blockquote {
+  border: none;
+  margin-left: 30px;
+}
+
+/* line 64, sass/default.scss */
 .logosquare {
   padding: 65px 20px;
   height: 200px;
@@ -7683,24 +7702,24 @@ h2 {
   background-color: #309cc8;
 }
 
-/* line 68, sass/default.scss */
+/* line 75, sass/default.scss */
 .read-more {
   color: #dc6b38;
   text-decoration: underline;
 }
 
-/* line 73, sass/default.scss */
+/* line 80, sass/default.scss */
 .nav-pills {
   background-color: #f4f4f4;
   font-size: 1.2em;
 }
-/* line 79, sass/default.scss */
+/* line 86, sass/default.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover {
   font-weight: bold;
   color: #444444;
   background-color: inherit;
 }
-/* line 84, sass/default.scss */
+/* line 91, sass/default.scss */
 .nav-pills > li.active > a:after, .nav-pills > li.active > a:hover:after {
   content: '';
   position: relative;
@@ -7714,33 +7733,20 @@ h2 {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
-/* line 100, sass/default.scss */
+/* line 107, sass/default.scss */
 .nav-pills > li a {
   padding-left: 30px;
   color: #444444;
 }
 
-/* line 109, sass/default.scss */
-.rjm-sidebar .nav .nav {
-  margin-bottom: 8px;
-}
-/* line 113, sass/default.scss */
-.rjm-sidebar .nav .nav li > a {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  font-size: 0.8em;
-  color: #868279;
-}
-
-/* line 124, sass/default.scss */
+/* line 114, sass/default.scss */
 .code-box {
   background: #f4f4f4;
   border: 1px solid #BFBFBF;
   border-radius: 7px;
   margin-bottom: 20px;
 }
-/* line 130, sass/default.scss */
+/* line 120, sass/default.scss */
 .code-box .nav {
   background: #E3E3E3;
   width: 100%;
@@ -7749,7 +7755,7 @@ h2 {
   clear: both;
   overflow: hidden;
 }
-/* line 138, sass/default.scss */
+/* line 128, sass/default.scss */
 .code-box .nav li {
   float: left;
   margin: 5px 5px;
@@ -7758,25 +7764,25 @@ h2 {
   font-weight: 400;
   text-transform: uppercase;
 }
-/* line 146, sass/default.scss */
+/* line 136, sass/default.scss */
 .code-box .nav li a {
   padding: 2px 10px;
 }
-/* line 149, sass/default.scss */
+/* line 139, sass/default.scss */
 .code-box .nav li a:hover {
   background: #444444;
   border-radius: 5px;
   color: #C5D0D3;
   cursor: pointer;
 }
-/* line 158, sass/default.scss */
+/* line 148, sass/default.scss */
 .code-box .nav li.active a {
   background: #444444;
   border-radius: 5px;
   color: #C5D0D3;
   cursor: pointer;
 }
-/* line 168, sass/default.scss */
+/* line 158, sass/default.scss */
 .code-box .code {
   clear: both;
   border: none;
@@ -7784,111 +7790,122 @@ h2 {
   margin: 0;
   padding: 15px 20px;
 }
-/* line 175, sass/default.scss */
+/* line 165, sass/default.scss */
 .code-box .code pre {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 184, sass/default.scss */
+/* line 174, sass/default.scss */
 .sphinxsidebarwrapper ul, .sphinxsidebarwrapper li {
   list-style: none;
 }
-/* line 189, sass/default.scss */
+/* line 179, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul {
   padding: 0;
 }
-/* line 192, sass/default.scss */
+/* line 182, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li {
   font-size: 0.8em;
   padding: 0 0 5px 0;
 }
-/* line 196, sass/default.scss */
+/* line 186, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li a {
   color: #868279;
 }
 
-/* line 205, sass/default.scss */
+/* line 195, sass/default.scss */
 #wrapper > .row {
   margin-right: 0;
 }
 
-/* line 209, sass/default.scss */
+/* line 199, sass/default.scss */
 #api-documentation > .row .examples {
   top: -110px;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 215, sass/default.scss */
+/* line 205, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav {
   display: block;
   border-radius: 0;
   z-index: 100;
 }
-/* line 220, sass/default.scss */
+/* line 210, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav.affix {
   top: 0;
 }
-/* line 224, sass/default.scss */
+/* line 213, sass/default.scss */
+#api-documentation > .row .examples .code-box .nav.affix-top {
+  visibility: hidden;
+}
+/* line 217, sass/default.scss */
 #api-documentation > .row .examples .code-box .tab-content {
   display: none;
 }
 
-/* line 233, sass/default.scss */
+/* line 226, sass/default.scss */
 .section h1, .section h2, .section h3, .section p, .section .code-box, .section .alert {
   margin-left: 30px;
   margin-right: 30px;
 }
-/* line 238, sass/default.scss */
+/* line 231, sass/default.scss */
 .section .split-pane {
   margin-right: 0;
 }
 
-/* line 243, sass/default.scss */
+/* line 236, sass/default.scss */
 .examples {
   background: #444444;
   color: white;
-  margin-bottom: -400px;
-  padding-bottom: 400px;
 }
-/* line 250, sass/default.scss */
-.examples .code-selector {
-  border-radius: 0;
-  border: none;
-  background: none;
-}
-/* line 255, sass/default.scss */
-.examples .code-selector .nav {
-  border-radius: 0;
-  padding: 15px 5px;
-  color: #444444;
-  border-bottom: 4px solid black;
-}
-/* line 262, sass/default.scss */
-.examples .code-selector .code {
-  color: #FFF0E7;
-}
-/* line 267, sass/default.scss */
+/* line 240, sass/default.scss */
 .examples .code-box {
   background: none;
   border: none;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 273, sass/default.scss */
+/* line 246, sass/default.scss */
 .examples .code-box .nav {
   display: none;
 }
-/* line 277, sass/default.scss */
+/* line 250, sass/default.scss */
 .examples .code-box pre {
   background: none;
 }
 
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* line 259, sass/default.scss */
+  .content {
+    position: absolute;
+    left: 250px;
+  }
+
+  /* line 264, sass/default.scss */
+  .rjm-sidebar {
+    width: 250px;
+    float: left;
+  }
+
+  /* line 269, sass/default.scss */
+  .examples {
+    margin-bottom: -400px;
+    padding-bottom: 400px;
+  }
+
+  /* line 277, sass/default.scss */
+  #api-documentation > .row .examples .code-box .nav.affix-top {
+    visibility: visible;
+  }
+}
 /* line 2, sass/pygments-api.scss */
 .examples pre, .examples .highlight {
   background: #444444;
   color: #f8f8f2;
+  border: none;
   /* Comment */
   /* Error */
   /* Keyword */
@@ -7951,252 +7968,252 @@ h2 {
   /* Name.Variable.Instance */
   /* Literal.Number.Integer.Long */
 }
-/* line 6, sass/pygments-api.scss */
+/* line 7, sass/pygments-api.scss */
 .examples pre .hll, .examples .highlight .hll {
   background-color: #49483e;
 }
-/* line 7, sass/pygments-api.scss */
+/* line 8, sass/pygments-api.scss */
 .examples pre .c, .examples .highlight .c {
   color: #75715e;
 }
-/* line 8, sass/pygments-api.scss */
+/* line 9, sass/pygments-api.scss */
 .examples pre .err, .examples .highlight .err {
   color: #960050;
   background-color: #1e0010;
 }
-/* line 9, sass/pygments-api.scss */
+/* line 10, sass/pygments-api.scss */
 .examples pre .k, .examples .highlight .k {
   color: #66d9ef;
 }
-/* line 10, sass/pygments-api.scss */
+/* line 11, sass/pygments-api.scss */
 .examples pre .l, .examples .highlight .l {
   color: #ae81ff;
 }
-/* line 11, sass/pygments-api.scss */
+/* line 12, sass/pygments-api.scss */
 .examples pre .n, .examples .highlight .n {
   color: #f8f8f2;
 }
-/* line 12, sass/pygments-api.scss */
+/* line 13, sass/pygments-api.scss */
 .examples pre .o, .examples .highlight .o {
   color: #f92672;
 }
-/* line 13, sass/pygments-api.scss */
+/* line 14, sass/pygments-api.scss */
 .examples pre .p, .examples .highlight .p {
   color: #f8f8f2;
 }
-/* line 14, sass/pygments-api.scss */
+/* line 15, sass/pygments-api.scss */
 .examples pre .cm, .examples .highlight .cm {
   color: #75715e;
 }
-/* line 15, sass/pygments-api.scss */
+/* line 16, sass/pygments-api.scss */
 .examples pre .cp, .examples .highlight .cp {
   color: #75715e;
 }
-/* line 16, sass/pygments-api.scss */
+/* line 17, sass/pygments-api.scss */
 .examples pre .c1, .examples .highlight .c1 {
   color: #75715e;
 }
-/* line 17, sass/pygments-api.scss */
+/* line 18, sass/pygments-api.scss */
 .examples pre .cs, .examples .highlight .cs {
   color: #75715e;
 }
-/* line 18, sass/pygments-api.scss */
+/* line 19, sass/pygments-api.scss */
 .examples pre .gd, .examples .highlight .gd {
   color: #f92672;
 }
-/* line 19, sass/pygments-api.scss */
+/* line 20, sass/pygments-api.scss */
 .examples pre .ge, .examples .highlight .ge {
   font-style: italic;
 }
-/* line 20, sass/pygments-api.scss */
+/* line 21, sass/pygments-api.scss */
 .examples pre .gi, .examples .highlight .gi {
   color: #a6e22e;
 }
-/* line 21, sass/pygments-api.scss */
+/* line 22, sass/pygments-api.scss */
 .examples pre .gs, .examples .highlight .gs {
   font-weight: bold;
 }
-/* line 22, sass/pygments-api.scss */
+/* line 23, sass/pygments-api.scss */
 .examples pre .gu, .examples .highlight .gu {
   color: #75715e;
 }
-/* line 23, sass/pygments-api.scss */
+/* line 24, sass/pygments-api.scss */
 .examples pre .kc, .examples .highlight .kc {
   color: #66d9ef;
 }
-/* line 24, sass/pygments-api.scss */
+/* line 25, sass/pygments-api.scss */
 .examples pre .kd, .examples .highlight .kd {
   color: #66d9ef;
 }
-/* line 25, sass/pygments-api.scss */
+/* line 26, sass/pygments-api.scss */
 .examples pre .kn, .examples .highlight .kn {
   color: #f92672;
 }
-/* line 26, sass/pygments-api.scss */
+/* line 27, sass/pygments-api.scss */
 .examples pre .kp, .examples .highlight .kp {
   color: #66d9ef;
 }
-/* line 27, sass/pygments-api.scss */
+/* line 28, sass/pygments-api.scss */
 .examples pre .kr, .examples .highlight .kr {
   color: #66d9ef;
 }
-/* line 28, sass/pygments-api.scss */
+/* line 29, sass/pygments-api.scss */
 .examples pre .kt, .examples .highlight .kt {
   color: #66d9ef;
 }
-/* line 29, sass/pygments-api.scss */
+/* line 30, sass/pygments-api.scss */
 .examples pre .ld, .examples .highlight .ld {
   color: #e6db74;
 }
-/* line 30, sass/pygments-api.scss */
+/* line 31, sass/pygments-api.scss */
 .examples pre .m, .examples .highlight .m {
   color: #ae81ff;
 }
-/* line 31, sass/pygments-api.scss */
+/* line 32, sass/pygments-api.scss */
 .examples pre .s, .examples .highlight .s {
   color: #e6db74;
 }
-/* line 32, sass/pygments-api.scss */
+/* line 33, sass/pygments-api.scss */
 .examples pre .na, .examples .highlight .na {
   color: #a6e22e;
 }
-/* line 33, sass/pygments-api.scss */
+/* line 34, sass/pygments-api.scss */
 .examples pre .nb, .examples .highlight .nb {
   color: #f8f8f2;
 }
-/* line 34, sass/pygments-api.scss */
+/* line 35, sass/pygments-api.scss */
 .examples pre .nc, .examples .highlight .nc {
   color: #a6e22e;
 }
-/* line 35, sass/pygments-api.scss */
+/* line 36, sass/pygments-api.scss */
 .examples pre .no, .examples .highlight .no {
   color: #66d9ef;
 }
-/* line 36, sass/pygments-api.scss */
+/* line 37, sass/pygments-api.scss */
 .examples pre .nd, .examples .highlight .nd {
   color: #a6e22e;
 }
-/* line 37, sass/pygments-api.scss */
+/* line 38, sass/pygments-api.scss */
 .examples pre .ni, .examples .highlight .ni {
   color: #f8f8f2;
 }
-/* line 38, sass/pygments-api.scss */
+/* line 39, sass/pygments-api.scss */
 .examples pre .ne, .examples .highlight .ne {
   color: #a6e22e;
 }
-/* line 39, sass/pygments-api.scss */
+/* line 40, sass/pygments-api.scss */
 .examples pre .nf, .examples .highlight .nf {
   color: #a6e22e;
 }
-/* line 40, sass/pygments-api.scss */
+/* line 41, sass/pygments-api.scss */
 .examples pre .nl, .examples .highlight .nl {
   color: #f8f8f2;
 }
-/* line 41, sass/pygments-api.scss */
+/* line 42, sass/pygments-api.scss */
 .examples pre .nn, .examples .highlight .nn {
   color: #f8f8f2;
 }
-/* line 42, sass/pygments-api.scss */
+/* line 43, sass/pygments-api.scss */
 .examples pre .nx, .examples .highlight .nx {
   color: #a6e22e;
 }
-/* line 43, sass/pygments-api.scss */
+/* line 44, sass/pygments-api.scss */
 .examples pre .py, .examples .highlight .py {
   color: #f8f8f2;
 }
-/* line 44, sass/pygments-api.scss */
+/* line 45, sass/pygments-api.scss */
 .examples pre .nt, .examples .highlight .nt {
   color: #f92672;
 }
-/* line 45, sass/pygments-api.scss */
+/* line 46, sass/pygments-api.scss */
 .examples pre .nv, .examples .highlight .nv {
   color: #f8f8f2;
 }
-/* line 46, sass/pygments-api.scss */
+/* line 47, sass/pygments-api.scss */
 .examples pre .ow, .examples .highlight .ow {
   color: #f92672;
 }
-/* line 47, sass/pygments-api.scss */
+/* line 48, sass/pygments-api.scss */
 .examples pre .w, .examples .highlight .w {
   color: #f8f8f2;
 }
-/* line 48, sass/pygments-api.scss */
+/* line 49, sass/pygments-api.scss */
 .examples pre .mf, .examples .highlight .mf {
   color: #ae81ff;
 }
-/* line 49, sass/pygments-api.scss */
+/* line 50, sass/pygments-api.scss */
 .examples pre .mh, .examples .highlight .mh {
   color: #ae81ff;
 }
-/* line 50, sass/pygments-api.scss */
+/* line 51, sass/pygments-api.scss */
 .examples pre .mi, .examples .highlight .mi {
   color: #ae81ff;
 }
-/* line 51, sass/pygments-api.scss */
+/* line 52, sass/pygments-api.scss */
 .examples pre .mo, .examples .highlight .mo {
   color: #ae81ff;
 }
-/* line 52, sass/pygments-api.scss */
+/* line 53, sass/pygments-api.scss */
 .examples pre .sb, .examples .highlight .sb {
   color: #e6db74;
 }
-/* line 53, sass/pygments-api.scss */
+/* line 54, sass/pygments-api.scss */
 .examples pre .sc, .examples .highlight .sc {
   color: #e6db74;
 }
-/* line 54, sass/pygments-api.scss */
+/* line 55, sass/pygments-api.scss */
 .examples pre .sd, .examples .highlight .sd {
   color: #e6db74;
 }
-/* line 55, sass/pygments-api.scss */
+/* line 56, sass/pygments-api.scss */
 .examples pre .s2, .examples .highlight .s2 {
   color: #e6db74;
 }
-/* line 56, sass/pygments-api.scss */
+/* line 57, sass/pygments-api.scss */
 .examples pre .se, .examples .highlight .se {
   color: #ae81ff;
 }
-/* line 57, sass/pygments-api.scss */
+/* line 58, sass/pygments-api.scss */
 .examples pre .sh, .examples .highlight .sh {
   color: #e6db74;
 }
-/* line 58, sass/pygments-api.scss */
+/* line 59, sass/pygments-api.scss */
 .examples pre .si, .examples .highlight .si {
   color: #e6db74;
 }
-/* line 59, sass/pygments-api.scss */
+/* line 60, sass/pygments-api.scss */
 .examples pre .sx, .examples .highlight .sx {
   color: #e6db74;
 }
-/* line 60, sass/pygments-api.scss */
+/* line 61, sass/pygments-api.scss */
 .examples pre .sr, .examples .highlight .sr {
   color: #e6db74;
 }
-/* line 61, sass/pygments-api.scss */
+/* line 62, sass/pygments-api.scss */
 .examples pre .s1, .examples .highlight .s1 {
   color: #e6db74;
 }
-/* line 62, sass/pygments-api.scss */
+/* line 63, sass/pygments-api.scss */
 .examples pre .ss, .examples .highlight .ss {
   color: #e6db74;
 }
-/* line 63, sass/pygments-api.scss */
+/* line 64, sass/pygments-api.scss */
 .examples pre .bp, .examples .highlight .bp {
   color: #f8f8f2;
 }
-/* line 64, sass/pygments-api.scss */
+/* line 65, sass/pygments-api.scss */
 .examples pre .vc, .examples .highlight .vc {
   color: #f8f8f2;
 }
-/* line 65, sass/pygments-api.scss */
+/* line 66, sass/pygments-api.scss */
 .examples pre .vg, .examples .highlight .vg {
   color: #f8f8f2;
 }
-/* line 66, sass/pygments-api.scss */
+/* line 67, sass/pygments-api.scss */
 .examples pre .vi, .examples .highlight .vi {
   color: #f8f8f2;
 }
-/* line 67, sass/pygments-api.scss */
+/* line 68, sass/pygments-api.scss */
 .examples pre .il, .examples .highlight .il {
   color: #ae81ff;
 }

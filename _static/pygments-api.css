@@ -1,11 +1,11 @@
 /*
 Syntax error: Undefined variable: "$grey-dark".
-        on line 3 of /Users/bsloane/Workspace/importapiv2/_static/sass/pygments-api.scss
+        on line 3 of /Users/bsloane/Workspace/developer-portal/_static/sass/pygments-api.scss
 
-1: /Users/bsloane/Workspace/importapiv2/_static/sass/pygments-api.scss
+1: /Users/bsloane/Workspace/developer-portal/_static/sass/pygments-api.scss
 
 Backtrace:
-/Users/bsloane/Workspace/importapiv2/_static/sass/pygments-api.scss:3
+/Users/bsloane/Workspace/developer-portal/_static/sass/pygments-api.scss:3
 /Users/bsloane/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.3.0.rc.1/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/bsloane/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.3.0.rc.1/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/bsloane/.rvm/gems/ruby-2.0.0-p247/gems/sass-3.3.0.rc.1/lib/sass/tree/visitors/perform.rb:369:in `visit_prop'
@@ -82,4 +82,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$grey-dark\".\A         on line 3 of /Users/bsloane/Workspace/importapiv2/_static/sass/pygments-api.scss\A \A 1: /Users/bsloane/Workspace/importapiv2/_static/sass/pygments-api.scss"; }
+  content: "Syntax error: Undefined variable: \"$grey-dark\".\A         on line 3 of /Users/bsloane/Workspace/developer-portal/_static/sass/pygments-api.scss\A \A 1: /Users/bsloane/Workspace/developer-portal/_static/sass/pygments-api.scss"; }

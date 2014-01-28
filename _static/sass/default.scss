@@ -24,17 +24,19 @@ h1, h2, h3, h4, h5, h6 {
     color: $grey-dark;
 }
 
-h1 {
-    font-size: 3em;
-}
+h1 { font-size: 3em; }
+h2 { font-size: 2em; }
+dt { font-weight: normal; }
 
-h2 {
-    font-size: 2em;
-}
-
-.admonition-title {
+/**** Sphinx specific items ***/
+.admonition-title { 
     font-weight: bold;
 }
+.descname { 
+    font-weight: bold; 
+    font-size: 1.1em; 
+}
+/**** End Sphinx items ***/
 
 .content {
     padding: 24px 0;
@@ -52,6 +54,11 @@ h2 {
 
 .dashed {
   border-top: 1px dashed #d2d0d0;
+}
+
+blockquote {
+    border: none;
+    margin-left: 30px;
 }
 
 .logosquare {
@@ -102,23 +109,6 @@ h2 {
             color: $grey-dark;
         }
     }
-}
-
-.rjm-sidebar {
-
-    .nav .nav {
-        // display: none; /* Hide by default, but at >768px, show it */
-        margin-bottom: 8px;
-
-        li > a {
-          padding-top: 3px;
-          padding-bottom: 3px;
-          padding-left: 30px;
-          font-size: 0.8em;
-          color: $grey-medium;
-        }
-    }
-
 }
 
 .code-box {
@@ -220,6 +210,9 @@ h2 {
             &.affix {
                 top: 0;
             }
+            &.affix-top {
+                visibility: hidden;
+            }
         }
         .tab-content {
             display: none;
@@ -243,26 +236,6 @@ h2 {
 .examples {
     background: $grey-dark;
     color: $white;
-    margin-bottom: -400px;
-    padding-bottom: 400px;
-    // min-height: $min-height;
-
-    .code-selector {
-        border-radius: 0;
-        border: none;
-        background: none;
-
-        .nav {
-            border-radius: 0;
-            padding: 15px 5px;
-            color: $grey-dark;
-            border-bottom: 4px solid $black;
-        }
-
-        .code {
-            color: #FFF0E7; 
-        }
-    }
 
     .code-box {
         background: none;
@@ -279,5 +252,36 @@ h2 {
         }
     }    
 }
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+
+    .content {
+        position: absolute;
+        left: 250px;        
+    }
+
+    .rjm-sidebar {
+        width: 250px;
+        float: left;
+    }
+
+    .examples {
+        margin-bottom: -400px;
+        padding-bottom: 400px;   
+    }
+
+    #api-documentation > .row .examples { 
+        .code-box {
+            .nav {
+                &.affix-top {
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+}
+
 
 @import 'pygments-api';
