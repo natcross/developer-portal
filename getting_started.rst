@@ -25,7 +25,7 @@ First, let's lay out a template for pushing the extra data:
   .. code-block:: js
   
     var rjmetrics = require("rjmetrics");
-    client = new rjmetrics.Client("your-client-id", "your-api-key");
+    client = new rjmetrics.Client(your-client-id, "your-api-key");
 
     // make sure the client is authenticated before we do anything
     client.authenticate().then( function(data) {
@@ -49,12 +49,24 @@ First, let's lay out a template for pushing the extra data:
   .. code-block:: php
 
     require 'vendor/autoload.php';
-    $client = new RJMetrics\Client(1742, "a7c702684655c41fec16512194a5f732");
+    $client = new RJMetrics\Client($your-client-id, "your-api-key");
 
     // make sure the client is authenticated before we do anything
     if($client->authenticate()) {
       // this is where we'll push the data
     }
+
+  .. code-block:: clojure
+
+    (ns examples.acquisition-source
+      (:require [rjmetrics.core :as rjmetrics]))
+
+    (defn run
+      []
+      (let [config {:client-id your-client-id :api-key "your-api-key"}]
+        (when (rjmetrics/authenticated? config)
+          ;; this is where we'll push data
+          )))
 
 Next, we want to actually push the data. Since we'll want to correlate this data with our ``users`` table in the RJMetrics data warehouse, we'll need a foreign key: ``user_id``. We'll also push a new field, ``acquisition_source``. We'll push these to a table called ``users_acquisition_source``.
 
@@ -90,6 +102,19 @@ Let's create a new function to do the dirty work of syncing the new data:
       // table named "users_acquisition_source"
       return $client->pushData("users_acquisition_source", $dataToPush);
     }
+
+  .. code-block:: clojure
+
+    (defn- sync-acquisition-sources
+    [config user-id acquisition-source]
+    (rjmetrics/push-data config
+                         ;; table named "users_acquisition_source"
+                         "users_acquisition_source"
+                         ;; user_id is the unique key here, since each user
+                         ;; should only have one record in the table
+                         {:keys ["user_id"]
+                          :user_id user-id
+                          :acquisition_source acquisition-source}))
 
 Now we can incorporate this new function into our original script:
 
@@ -204,6 +229,48 @@ Now we can incorporate this new function into our original script:
       }
     }
 
+  .. code-block:: clojure
+
+    (ns examples.acquisition-source
+      (:require [rjmetrics.core :as rjmetrics]))
+
+    (defn- sync-acquisition-sources
+      [config user-id acquisition-source]
+      (rjmetrics/push-data config
+                           ;; table named "users_acquisition_source"
+                           "users_acquisition_source"
+                           ;; user_id is the unique key here, since each user
+                           ;; should only have one record in the table
+                           {:keys ["user_id"]
+                            :user_id user-id
+                            :acquisition_source acquisition-source}))
+
+    (defn- sync-user
+      [config user]
+      (let [result (sync-acquisition-sources config
+                                             (:id user)
+                                             (:acquisition_source user))]
+        ;; handle response array
+        (if (= (-> result first :status) 201)
+            (print "Synced user with id" (:id user) "\n")
+            (print "Failed to sync user with id" (:id user) "\n"))))
+
+    (defn run
+      []
+      (let [config {:client-id your-client-id :api-key "your-api-key"}
+            ;; let's define some fake users
+            users [{:id 1, :email "joe@schmo.com", :acquisition_source "PPC"}
+                   {:id 2, :email "mike@smith.com", :acquisition_source "PPC"}
+                   {:id 3, :email "lorem@ipsum.com", :acquisition_source "Referral"}
+                   {:id 4, :email "george@vandelay.com", :acquisition_source "Organic"}
+                   {:id 5, :email "larry@google.com", :acquisition_source "Organic"}]]
+        ;; make sure the client is authenticated before we do anything
+        (when (rjmetrics/authenticated? config)
+          ;; iterate through users and push data
+          (dorun (map (partial sync-user config) users)))))
+
+You can run the example with the following command:
+
 .. code-box::
 
   .. code-block:: js
@@ -215,6 +282,14 @@ Now we can incorporate this new function into our original script:
 
     composer install
     php acquisition-source.php
+
+  .. code-block:: clojure
+
+    lein repl
+
+    > (ns examples.acquisition-source)
+    > (require :reload 'examples.acquisition-source)
+    > (run)
 
 
 2. Step 2 Title
