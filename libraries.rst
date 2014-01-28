@@ -136,3 +136,56 @@ The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pus
 
 For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
 
+JS
+=============================
+
+Installation
+-----------------------------
+
+The RJMetrics Ruby client library is available as a gem:
+
+  .. code-block:: bash
+
+    npm install rjmetrics
+
+You can also install it via npm by adding the following line to the dependencies field in your ``package.json`` file:
+
+  .. code-block:: js
+
+    "rjmetrics": "0.1.0"
+
+Now, you can use the library like this:
+
+  .. code-block:: js
+
+    var rjmetrics = require("rjmetrics");
+    client = rjmetrics.Client(api_key, client_id);
+
+    # do stuff with client
+
+Usage
+----------------------------
+
+The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pushData``.
+
+  .. code-block:: ruby
+
+    # Constructs a Client instance if it receives valid arguments or will raise an ArgumentError.
+    #
+    # @param client_id [Integer] your RJMetrics Client ID
+    # @param api_key [String] your RJMetrics API Key
+    # @param timeout_in_seconds [Integer] seconds to wait for API responses or nil
+    def initialize(client_id, api_key, timeout_in_seconds = 10)
+
+    # Checks if the provided Client ID and API Key are valid credentials by requestin from the RJMetrics API Sandbox.
+    def authenticated?
+
+    # Sends data to RJMetrics Data Import API.
+    #
+    # @param table_name [String] the table name you wish to store the data
+    # @param data [Hashamp] or Array of Hashmaps of data points that will get sent
+    # @param url [String] Import API url or nil
+    # @return [Array] results of each request to RJMetrics Data Import API
+    def pushData(table_name, data, url = API_BASE)
+
+For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
