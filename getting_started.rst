@@ -11,14 +11,14 @@ Here are some quick examples that can get you started with the Import API:
 
 .. _installing-docdir:
 
-Users Acquisition Source
-========================
+Creating a Users Table
+======================
 
-Let's start with a common use case: you have a ``users`` table with some standard information, like ``user_id``, ``email``, and ``created_date``.
+In your app, you probably have a ``user`` object with some data like ``id``, ``email``, and ``created_date``.
 
-Now you have some extra data, and you want to add an extra field to your ``users`` table: ``acquisition_source``.
+Let's walk through how you would push this data to the Import API.
 
-First, let's lay out a template for pushing the extra data:
+First, let's lay out a template for pushing the data:
 
 .. code-box::
 
@@ -68,9 +68,7 @@ First, let's lay out a template for pushing the extra data:
           ;; this is where we'll push data
           )))
 
-Next, we want to actually push the data. Since we'll want to correlate this data with our ``users`` table in the RJMetrics data warehouse, we'll need a foreign key: ``user_id``. We'll also push a new field, ``acquisition_source``. We'll push these to a table called ``users_acquisition_source``.
-
-Let's create a new function to do the dirty work of syncing the new data:
+Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data:
 
 .. code-box::
 
@@ -110,7 +108,7 @@ Let's create a new function to do the dirty work of syncing the new data:
     (defn- sync-user
       [config user]
       (let [result (rjmetrics/push-data config
-                                        ;; table named "users_acquisition_source"
+                                        ;; table named "users"
                                         "users"
                                         ;; user_id is the unique key here, since each user
                                         ;; should only have one record in the table
@@ -238,7 +236,7 @@ Now we can incorporate this new function into our original script:
     (defn- sync-user
       [config user]
       (let [result (rjmetrics/push-data config
-                                        ;; table named "users_acquisition_source"
+                                        ;; table named "users"
                                         "users"
                                         ;; user_id is the unique key here, since each user
                                         ;; should only have one record in the table
@@ -261,24 +259,24 @@ Now we can incorporate this new function into our original script:
           ;; iterate through users and push data
           (dorun (map (partial sync-user config) users)))))
 
-You can run the example with the following command:
+You can run this example with the following command:
 
 .. code-box::
 
   .. code-block:: js
 
     npm install
-    node acquisition-source.js
+    node users-table.js
 
   .. code-block:: php
 
     composer install
-    php acquisition-source.php
+    php users-table.php
 
   .. code-block:: clojure
 
     lein repl
 
-    > (ns examples.acquisition-source)
-    > (require :reload 'examples.acquisition-source)
+    > (ns examples.users-table)
+    > (require :reload 'examples.users-table)
     > (run)
