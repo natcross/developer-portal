@@ -76,45 +76,48 @@ Let's create a new function to do the dirty work of syncing the new data:
 
   .. code-block:: js
 
-    function syncAcquisitionSources(client, user_id, acquisition_source) {
+    function syncUser(client, user) {
       return client.pushData(
-        // table named "users_acquisition_source"
-        "users_acquisition_source",
+        // table named "users"
+        "users",
         {
-          // user_id is the unique key here. there should only be one
-          // record per client id.
-          "keys": ["user_id"],
-          "user_id": user_id,
-          "acquisition_source": acquisition_source
+          // user_id is the unique key here, since each user should only
+          // have one record in this table
+          "keys": ["id"],
+          "id": user.id,
+          "email": user.email,
+          "acquisition_source": user.acquisition_source
         });
     }
 
   .. code-block:: php
 
-    function syncAcquisitionSources($client, $id, $acquisitionSource) {
+    function syncUser($client, $user) {
       $dataToPush = new stdClass();
-      $dataToPush->user_id = $id;
-      $dataToPush->acquisition_source = $acquisitionSource;
+      $dataToPush->id = $user->id;
+      $dataToPush->email = $user->email;
+      $dataToPush->acquisition_source = $user->acquisitionSource;
       // user_id is the unique key here, since each user should only
       // have one record in this table
-      $dataToPush->keys = array("user_id");
+      $dataToPush->keys = array("id");
 
-      // table named "users_acquisition_source"
-      return $client->pushData("users_acquisition_source", $dataToPush);
+      // table named "users"
+      return $client->pushData("users", $dataToPush);
     }
 
   .. code-block:: clojure
 
-    (defn- sync-acquisition-sources
-    [config user-id acquisition-source]
-    (rjmetrics/push-data config
-                         ;; table named "users_acquisition_source"
-                         "users_acquisition_source"
-                         ;; user_id is the unique key here, since each user
-                         ;; should only have one record in the table
-                         {:keys ["user_id"]
-                          :user_id user-id
-                          :acquisition_source acquisition-source}))
+    (defn- sync-user
+      [config user]
+      (let [result (rjmetrics/push-data config
+                                        ;; table named "users_acquisition_source"
+                                        "users"
+                                        ;; user_id is the unique key here, since each user
+                                        ;; should only have one record in the table
+                                        (assoc user :keys ["id"]))]
+        (if (= (-> result first :status) 201)
+            (print "Synced user with id" (:id user) "\n")
+            (print "Failed to sync user with id" (:id user) "\n"))))
 
 Now we can incorporate this new function into our original script:
 
@@ -123,18 +126,19 @@ Now we can incorporate this new function into our original script:
   .. code-block:: js
 
     var rjmetrics = require("rjmetrics");
-    var client = new rjmetrics.Client("your-client-id", "your-api-key");
+    var client = new rjmetrics.Client(your-client-id, "your-api-key");
 
-    function syncAcquisitionSources(client, user_id, acquisition_source) {
+    function syncUser(client, user) {
       return client.pushData(
-        // table named "users_acquisition_source"
-        "users_acquisition_source",
+        // table named "users"
+        "users",
         {
           // user_id is the unique key here, since each user should only
           // have one record in this table
-          "keys": ["user_id"],
-          "user_id": user_id,
-          "acquisition_source": acquisition_source
+          "keys": ["id"],
+          "id": user.id,
+          "email": user.email,
+          "acquisition_source": user.acquisition_source
         });
     }
 
@@ -164,7 +168,7 @@ Now we can incorporate this new function into our original script:
       if(!hasErrors) {
         // iterate through users and push data
         users.forEach( function(user) {
-          syncAcquisitionSources(client, user.id, user.acquisition_source).then( function(data) {
+          syncUser(client, user).then( function(data) {
             console.log("Synced user with id " + user.id);
           }, function(error) {
             console.error("Failed to sync user with id " + user.id);
@@ -176,18 +180,19 @@ Now we can incorporate this new function into our original script:
   .. code-block:: php
 
     require 'vendor/autoload.php';
-    $client = new RJMetrics\Client(1742, "a7c702684655c41fec16512194a5f732");
+    $client = new RJMetrics\Client($your-client-id, "your-api-key");
 
-    function syncAcquisitionSources($client, $id, $acquisitionSource) {
+    function syncUser($client, $user) {
       $dataToPush = new stdClass();
-      $dataToPush->user_id = $id;
-      $dataToPush->acquisition_source = $acquisitionSource;
+      $dataToPush->id = $user->id;
+      $dataToPush->email = $user->email;
+      $dataToPush->acquisition_source = $user->acquisitionSource;
       // user_id is the unique key here, since each user should only
       // have one record in this table
-      $dataToPush->keys = array("user_id");
+      $dataToPush->keys = array("id");
 
-      // table named "users_acquisition_source"
-      return $client->pushData("users_acquisition_source", $dataToPush);
+      // table named "users"
+      return $client->pushData("users", $dataToPush);
     }
 
     // let's define some fake users
@@ -213,11 +218,7 @@ Now we can incorporate this new function into our original script:
     if($client->authenticate()) {
       // iterate through users and push data
       foreach($users as $user) {
-        $responses = syncAcquisitionSources(
-          $client,
-          $user->id,
-          $user->acquisitionSource
-        );
+        $responses = syncUser($client, $user);
 
         // api calls always return an array of responses
         foreach($responses as $response) {
@@ -234,23 +235,14 @@ Now we can incorporate this new function into our original script:
     (ns examples.acquisition-source
       (:require [rjmetrics.core :as rjmetrics]))
 
-    (defn- sync-acquisition-sources
-      [config user-id acquisition-source]
-      (rjmetrics/push-data config
-                           ;; table named "users_acquisition_source"
-                           "users_acquisition_source"
-                           ;; user_id is the unique key here, since each user
-                           ;; should only have one record in the table
-                           {:keys ["user_id"]
-                            :user_id user-id
-                            :acquisition_source acquisition-source}))
-
     (defn- sync-user
       [config user]
-      (let [result (sync-acquisition-sources config
-                                             (:id user)
-                                             (:acquisition_source user))]
-        ;; handle response array
+      (let [result (rjmetrics/push-data config
+                                        ;; table named "users_acquisition_source"
+                                        "users"
+                                        ;; user_id is the unique key here, since each user
+                                        ;; should only have one record in the table
+                                        (assoc user :keys ["id"]))]
         (if (= (-> result first :status) 201)
             (print "Synced user with id" (:id user) "\n")
             (print "Failed to sync user with id" (:id user) "\n"))))
@@ -290,37 +282,3 @@ You can run the example with the following command:
     > (ns examples.acquisition-source)
     > (require :reload 'examples.acquisition-source)
     > (run)
-
-
-2. Step 2 Title
-=============================
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum 
-
-
-.. code-box::
-
-  .. code-block:: bash
-  
-    curl -v https://connect.rjmetrics.com/:endpoint?apikey=<apikey>
-
-  .. code-block:: js
-
-     document.write("hello world!");
-     function(input) {
-      return input;
-     }
-
-  .. code-block:: php
-
-    <?php
-     echo "Hello World!";
-     function($input) {
-      return $input;
-     }
-    ?>
-
-  .. code-block:: ruby
-
-     Some Ruby code.
-
