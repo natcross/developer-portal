@@ -5,9 +5,9 @@
 Getting Started
 ******************************
 
-Before you begin, you should checkout the "Libraries" section to install your chosen client library.
+Before you begin, you should checkout the :doc:`libraries` section to install your chosen client library.
 
-Here are some quick examples that can get you started with the Import API:
+Here are some quick examples that can get you started with the Import API
 
 .. _installing-docdir:
 

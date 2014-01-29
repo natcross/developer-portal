@@ -13,7 +13,7 @@ $min-height: 1500px;
 
 body{
   font-family: "proxima-nova", Arial, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
   color: $grey-medium;
 }
@@ -39,7 +39,7 @@ dt { font-weight: normal; }
 /**** End Sphinx items ***/
 
 .content {
-    padding: 24px 0;
+    padding: 0px 35px
 }
 
 .intro {
@@ -170,7 +170,17 @@ blockquote {
     }
 }
 
+.sphinxsidebar {
+    height: 100%;
+}
+
 .sphinxsidebarwrapper {
+    height: 100%;
+
+    ul {
+        height: 100%;
+    }
+
     ul, li {
         list-style: none;
     }
@@ -197,7 +207,7 @@ blockquote {
 }
 
 #api-documentation > .row .examples { 
-    top: -110px;
+    top: -89px;
     padding-left: 0;
     padding-right: 0;
 
@@ -258,12 +268,14 @@ blockquote {
 
     .content {
         position: absolute;
-        left: 250px;        
+        left: 225px;        
     }
 
     .rjm-sidebar {
-        width: 250px;
-        float: left;
+        top: 0;
+        bottom: 0;
+        position: fixed;
+        width: 250px;        
     }
 
     .examples {
