@@ -11,10 +11,10 @@ Here are some quick examples that can get you started with the Import API:
 
 .. _installing-docdir:
 
-Creating a Users Table
-======================
+Create a Users Table
+====================
 
-In your app, you probably have a ``user`` object with some data like ``id``, ``email``, and ``created_date``.
+In your app, you probably have a ``user`` object with some data like ``id``, ``email``, and ``acquisition_source``.
 
 Let's walk through how you would push this data to the Import API.
 
