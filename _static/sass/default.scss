@@ -67,7 +67,7 @@ blockquote {
   width: 100%;
   display: block;
   text-align: center;
-  background: url("../images/logo.jpg") center center no-repeat;
+  background: url("images/logo.png") center center no-repeat;
   background-size: auto 80%;
   background-color: $blue;
 }
@@ -201,6 +201,13 @@ blockquote {
     }
 }
 
+// /* Home page sections */
+// #get-started, #api-documentation, #libraries, #faq-support {
+//     width: 50%;
+//     float: left;
+// }
+
+// /* End home page sections */
 
 #wrapper > .row {
     margin-right: 0;
@@ -210,6 +217,8 @@ blockquote {
     top: -89px;
     padding-left: 0;
     padding-right: 0;
+    margin-bottom: -200px;
+    padding-bottom: 125px;
 
     .code-box {
         .nav {
@@ -259,6 +268,7 @@ blockquote {
 
         pre {
             background: none;
+            font-size: 0.8em;
         }
     }    
 }
