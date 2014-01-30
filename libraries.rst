@@ -92,7 +92,7 @@ The RJMetrics Ruby client library is available as a gem:
 
     gem install rjmetrics-client
 
-You can also install it via bundler by adding the following line:
+You can also install it via bundler by adding the following line in your `Gemfile`:
 
   .. code-block:: ruby
 
