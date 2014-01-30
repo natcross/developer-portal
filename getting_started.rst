@@ -29,22 +29,10 @@ First, let's lay out a template for pushing the data:
 
     // make sure the client is authenticated before we do anything
     client.authenticate().then( function(data) {
-      // check the response for errors
-      var hasErrors = false;
-
-      // `authenticate` and `pushData` always return an array of results
-      data.forEach( function(el) {
-        // 201 is a successful push or authenticate. anything else is an error.
-        if(el.code != 201) {
-          hasErrors = true;
-          console.error("Failed to authenticate: " + el.body.reasons);
-        }
-      });
-
-      if(!hasErrors) {
-        // this is where we'll push the data
-      }
-    }, console.error)
+      // this is where we'll push the data
+    }).fail(function(err) {
+      console.error("Failed to authenticate!");
+    });
 
   .. code-block:: php
 
@@ -171,29 +159,19 @@ Now we can incorporate this new function into our original script:
 
     // make sure the client is authenticated before we do anything
     client.authenticate().then( function(data) {
-      // check the response for errors
-      var hasErrors = false;
 
-      // `authenticate` and `pushData` always return an array of results
-      data.forEach( function(el) {
-        // 201 is a successful push or authenticate. anything else is an error.
-        if(el.code != 201) {
-          hasErrors = true;
-          console.error("Failed to authenticate: " + el.body.reasons);
-        }
+      // iterate through users and push data
+      users.forEach( function(user) {
+        syncUser(client, user).then( function(data) {
+          console.log("Synced user with id " + user.id);
+        }, function(error) {
+          console.error("Failed to sync user with id " + user.id);
+        })
       });
 
-      if(!hasErrors) {
-        // iterate through users and push data
-        users.forEach( function(user) {
-          syncUser(client, user).then( function(data) {
-            console.log("Synced user with id " + user.id);
-          }, function(error) {
-            console.error("Failed to sync user with id " + user.id);
-          })
-        });
-      }
-    }, console.error)
+    }).fail(function(err) {
+      console.error("Failed to authenticate!");
+    });
 
   .. code-block:: php
 
@@ -422,25 +400,19 @@ Now, we can plug this into the same template from the users table:
     ];
 
     client.authenticate().then( function(data) {
-      var hasErrors = false;
 
-      data.forEach( function(el) {
-        if(el.code != 201) {
-          hasErrors = true;
-          console.error("Failed to authenticate: " + el.body.reasons);
-        }
+      orders.forEach( function(order) {
+        syncOrder(client, order).then( function(data) {
+          console.log("Synced order with id " + order.id);
+        }, function(error) {
+          console.error("Failed to sync order with id " + order.id);
+        })
       });
 
-      if(!hasErrors) {
-        orders.forEach( function(order) {
-          syncOrder(client, order).then( function(data) {
-            console.log("Synced order with id " + order.id);
-          }, function(error) {
-            console.error("Failed to sync order with id " + order.id);
-          })
-        });
-      }
-    }, console.error)
+    }).fail(function(err) {
+      console.error("Failed to authenticate!");
+    });
+
 
   .. code-block:: php
 
