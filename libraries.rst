@@ -26,14 +26,9 @@ Add the following to your project's ``composer.json``:
   .. code-block:: js
 
     {
-      ...
-      "repositories": [
-        ...
-        {"type": "vcs", "url": "https://github.com/RJMetrics/RJMetrics-php"}
-      ],
       "require": {
         ...
-        "rjmetrics/client": "dev-master"
+        "rjmetrics/rjmetrics-client": "0.1.1"
       }
     }
 
@@ -44,7 +39,7 @@ Now, you can use the library in your script, like this:
     <?php
 
     require 'vendor/autoload.php';
-    $client = new \RJMetrics\Client($myClientId, $myApiKey);
+    $client = new RJMetrics\Client($myClientId, $myApiKey);
 
     /* do stuff with $client */
 
@@ -97,7 +92,7 @@ The RJMetrics Ruby client library is available as a gem:
 
     gem install rjmetrics-client
 
-You can also install it via bundler by adding the following line:
+You can also install it via bundler by adding the following line in your `Gemfile`:
 
   .. code-block:: ruby
 
@@ -107,8 +102,8 @@ Now, you can use the library like this:
 
   .. code-block:: ruby
 
-    require "rjmetrics-client"
-    client = RJMetricsClient.new(api_key, client_id)
+    require "rjmetrics-client/client"
+    client = Client.new(client_id, api_key)
 
     # do stuff with client
 
@@ -136,13 +131,13 @@ The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pus
 
 For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
 
-JS
+Javascript
 =============================
 
 Installation
 -----------------------------
 
-The RJMetrics Ruby client library is available as a gem:
+The RJMetrics Javascript client library is available as a gem:
 
   .. code-block:: bash
 
@@ -152,7 +147,7 @@ You can also install it via npm by adding the following line to the dependencies
 
   .. code-block:: js
 
-    "rjmetrics": "0.1.0"
+    "rjmetrics": "0.1.1"
 
 Now, you can use the library like this:
 
@@ -163,29 +158,33 @@ Now, you can use the library like this:
 
     # do stuff with client
 
-Usage
-----------------------------
+For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-js>`_.
 
-The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pushData``.
+Clojure
+=============================
 
-  .. code-block:: ruby
+Installation
+-----------------------------
 
-    # Constructs a Client instance if it receives valid arguments or will raise an ArgumentError.
-    #
-    # @param client_id [Integer] your RJMetrics Client ID
-    # @param api_key [String] your RJMetrics API Key
-    # @param timeout_in_seconds [Integer] seconds to wait for API responses or nil
-    def initialize(client_id, api_key, timeout_in_seconds = 10)
+You can install the RJMetrics Clojure client library by adding the following dependency to your ``project.clj``.
 
-    # Checks if the provided Client ID and API Key are valid credentials by requestin from the RJMetrics API Sandbox.
-    def authenticated?
+  .. code-block:: clojure
 
-    # Sends data to RJMetrics Data Import API.
-    #
-    # @param table_name [String] the table name you wish to store the data
-    # @param data [Hashamp] or Array of Hashmaps of data points that will get sent
-    # @param url [String] Import API url or nil
-    # @return [Array] results of each request to RJMetrics Data Import API
-    def pushData(table_name, data, url = API_BASE)
+    [rjmetrics "0.1.0"]
 
-For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
+Now, you can use the library like this:
+
+  .. code-block:: clojure
+
+    (ns example
+      (:require [rjmetrics.core :as rjmetrics]))
+
+    (def config-map {:client-id 1
+                      :api-key "your-api-key"})
+
+    (when (rjmetrics/authenticated? config-map)
+      ;; do stuff with client
+      )
+
+For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-clj>`_.
+
