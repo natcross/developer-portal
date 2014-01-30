@@ -158,7 +158,7 @@ Now, you can use the library like this:
 
     # do stuff with client
 
-For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
+For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-js>`_.
 
 Clojure
 =============================
@@ -185,4 +185,6 @@ Now, you can use the library like this:
     (when (rjmetrics/authenticated? config-map)
       ;; do stuff with client
       )
+
+For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-clj>`_.
 
