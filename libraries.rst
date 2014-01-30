@@ -147,7 +147,7 @@ You can also install it via npm by adding the following line to the dependencies
 
   .. code-block:: js
 
-    "rjmetrics": "0.1.0"
+    "rjmetrics": "0.1.1"
 
 Now, you can use the library like this:
 
