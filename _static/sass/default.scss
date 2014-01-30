@@ -24,10 +24,14 @@ h1, h2, h3, h4, h5, h6 {
     color: $grey-dark;
 }
 
+h1, h2 {
+    margin-top: 50px;
+}
+
 h1 { font-size: 3em; }
 h2 { font-size: 2em; }
 dt { font-weight: normal; }
-
+p { padding-bottom: 20px; }
 /**** Sphinx specific items ***/
 .admonition-title { 
     font-weight: bold;
@@ -39,7 +43,7 @@ dt { font-weight: normal; }
 /**** End Sphinx items ***/
 
 .content {
-    padding: 0px 35px
+    padding: 0 0 0 35px
 }
 
 .intro {
@@ -105,7 +109,7 @@ blockquote {
         }
 
         a {
-            padding-left: 30px;
+            padding: 10px 40px;
             color: $grey-dark;
         }
     }
@@ -183,6 +187,7 @@ blockquote {
 
     ul, li {
         list-style: none;
+        padding-top: 10px;
     }
 
     .toctree-l1 {
@@ -190,7 +195,7 @@ blockquote {
             padding: 0;
 
             li {
-                font-size: 0.8em;
+                font-size: 0.75em;
                 padding: 0 0 5px 0;
 
                 a {
@@ -201,24 +206,17 @@ blockquote {
     }
 }
 
-// /* Home page sections */
-// #get-started, #api-documentation, #libraries, #faq-support {
-//     width: 50%;
-//     float: left;
-// }
-
-// /* End home page sections */
-
 #wrapper > .row {
     margin-right: 0;
+    margin-left: 0;
 }
 
 #api-documentation > .row .examples { 
-    top: -89px;
+    top: -120px;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: -200px;
-    padding-bottom: 125px;
+    margin-bottom: -225px;
+    padding-bottom: 200px;
 
     .code-box {
         .nav {
@@ -278,7 +276,7 @@ blockquote {
 
     .content {
         position: absolute;
-        left: 225px;        
+        left: 225px;
     }
 
     .rjm-sidebar {

@@ -35,6 +35,7 @@ Overview
 
       curl -v https://connect.rjmetrics.com/
 
+.. _api-authentication:
 =============================
 Authentication
 =============================
@@ -181,6 +182,8 @@ Status
     .. code-block:: ruby
 
     .. code-block:: clojure
+
+.. _api-upsert:
 
 Upsert
 -----------------------------

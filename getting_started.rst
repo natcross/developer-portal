@@ -18,7 +18,7 @@ Your most important table in RJMetrics is your Users table. In your app, you pro
 
 Let's walk through how you would push this data to the Import API.
 
-First, let's lay out a template for pushing the data:
+First, let's lay out a template for pushing the data. We'll make sure the client is :ref:`authenticated <api-authentication>` and prepare to push the data to the Import API.
 
 .. code-box::
 
@@ -68,7 +68,7 @@ First, let's lay out a template for pushing the data:
           ;; this is where we'll push data
           )))
 
-Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data:
+Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data. Check out the :ref:`upsert documentation <api-upsert>` to learn about the specifics on data that can be pushed to the API.
 
 .. code-box::
 
@@ -117,7 +117,7 @@ Next, we want to actually push the data. Let's create a new function to do the d
             (print "Synced user with id" (:id user) "\n")
             (print "Failed to sync user with id" (:id user) "\n"))))
 
-Now we can incorporate this new function into our original script:
+Putting it all together, we incorporate the `syncUser` function into our original script.
 
 .. code-box::
 
@@ -258,6 +258,8 @@ Now we can incorporate this new function into our original script:
         (when (rjmetrics/authenticated? config)
           ;; iterate through users and push data
           (dorun (map (partial sync-user config) users)))))
+
+This example is included with the :doc:`client libraries <libraries>` or can be `downloaded from github <http://www.github.com/rjmetrics>`_.
 
 You can run this example with the following command:
 
