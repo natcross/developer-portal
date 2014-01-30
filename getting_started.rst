@@ -68,6 +68,16 @@ First, let's lay out a template for pushing the data:
           ;; this is where we'll push data
           )))
 
+  .. code-block:: ruby
+
+    require "rjmetrics-client/client"
+    client = Client.new(your-client-id, "your-api-key")
+
+    # make sure the client is authenticated before we do anything
+    if client.authenticated?
+      # this is where we'll push data
+    end
+
 Next, we want to actually push the data. Let's create a new function to do the dirty work of syncing the new data:
 
 .. code-box::
@@ -116,6 +126,16 @@ Next, we want to actually push the data. Let's create a new function to do the d
         (if (= (-> result first :status) 201)
             (print "Synced user with id" (:id user) "\n")
             (print "Failed to sync user with id" (:id user) "\n"))))
+
+  .. code-block:: ruby
+
+    def sync_user(client, user)
+      # `id` is the unique key here, since each user should only
+      # have one record in this table
+      user[:keys] = [:id]
+      # table named "users"
+      return client.pushData("users", user)
+    end
 
 Now we can incorporate this new function into our original script:
 
@@ -259,6 +279,42 @@ Now we can incorporate this new function into our original script:
           ;; iterate through users and push data
           (dorun (map (partial sync-user config) users)))))
 
+  .. code-block:: ruby
+
+    require "rjmetrics-client/client"
+    client = Client.new(your-api-key, "your-client-id")
+
+    # let's define some fake users
+    fake_users = [
+      {:id => 1, :email => "joe@schmo.com", :acquisition_source => "PPC"},
+      {:id => 2, :email => "mike@smith.com", :acquisition_source => "PPC"},
+      {:id => 3, :email => "lorem@ipsum.com", :acquisition_source => "Referral"},
+      {:id => 4, :email => "george@vandelay.com", :acquisition_source => "Organic"},
+      {:id => 5, :email => "larry@google.com", :acquisition_source => "Organic"}
+    ]
+
+    def sync_user(client, user)
+      # `id` is the unique key here, since each user should only
+      # have one record in this table
+      user[:keys] = [:id]
+      # table named "users"
+      return client.pushData("users", user)
+    end
+
+    # make sure the client is authenticated before we do anything
+    if client.authenticated?
+      fake_users.each do |user|
+        # iterate through users and push data
+        sync_user(client, user).each do |response|
+          if response["code"]
+            puts "Synced user with id #{user[:id]}"
+          else
+            puts "Failed to sync user with id #{user[:id]}"
+          end
+        end
+      end
+    end
+
 You can run this example with the following command:
 
 .. code-box::
@@ -328,6 +384,13 @@ We'll need a new function to push the order object:
         (if (= (-> result first :status) 201)
             (print "Synced order with id" (:id order) "\n")
             (print "Failed to sync orfer with id" (:id order) "\n"))))
+
+  .. code-block:: ruby
+
+    def sync_order(client, order)
+      order[:keys] = [:id]
+      return client.pushData("orders", order)
+    end
 
 Now, we can plug this into the same template from the users table:
 
@@ -451,3 +514,33 @@ Now, we can plug this into the same template from the users table:
                     {:id 5, :user_id 5 :value 9.90   :sku "kitten-mittons"}]]
         (when (rjmetrics/authenticated? config)
           (dorun (map (partial sync-order config) users)))))
+
+  .. code-block:: ruby
+
+    require "rjmetrics-client/client"
+    client = Client.new(your-client-id, "your-api-key")
+
+    fake_orders = [
+      {:id => 1, :user_id => 1, :value => 58.40,  :sku => "milky-white-suede-shoes"},
+      {:id => 2, :user_id => 1, :value => 23.99,  :sku => "red-button-down-fleece"},
+      {:id => 3, :user_id => 2, :value => 5.00,   :sku => "bottle-o-bubbles"},
+      {:id => 4, :user_id => 3, :value => 120.01, :sku => "zebra-striped-game-boy"},
+      {:id => 5, :user_id => 5, :value => 9.90,   :sku => "kitten-mittons"}
+    ]
+
+    def sync_order(client, order)
+      order[:keys] = [:id]
+      return client.pushData("orders", order)
+    end
+
+    if client.authenticated?
+      fake_orders.each do |order|
+        sync_order(client, order).each do |response|
+          if response["code"]
+            puts "Synced order with id #{order[:id]}"
+          else
+            puts "Failed to sync order with id #{order[:id]}"
+          end
+        end
+      end
+    end
