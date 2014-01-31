@@ -46,37 +46,6 @@ Now, you can use the library in your script, like this:
 
     ?>
 
-Usage
------------------------------
-
-The PHP client has three methods: ``__construct``, ``authenticate``, and ``pushData``.
-
-  .. php:method:: __construct($clientId, $apiKey, $timeoutInSeconds = 10)
-
-      Takes a `clientId` and `apiKey`. If either are invalid, this function will immediately throw an `InvalidArgumentException`. It will then hit the live API to test the given credentials. If that authentication fails, it will throw a `RJMetrics\UnableToConnectException`.
-
-      :param int $clientId: The client ID
-      :param string $apiKey: The API Key
-      :param int $timeoutInSeconds: The timeout in seconds. Defaults to 10 seconds
-      :returns: object
-
-  .. php:method:: authenticate()
-
-      This function will run authentication against the live API. Will return true if authentication succeeds, false if it fails.
-
-      :returns: true if authentication succeeds, false if it fails
-
-  .. php:method:: pushData($tableName, $data, $url = self::API_BASE)
-
-      Given a table name and a valid php object or array, this function will push it to the Import API. If `tableName` or `data` are invalid, this function will throw an `InvalidArgumentException`.
-
-      Per the Import API spec, it breaks `data` down into chunks of 100 records per request.
-
-      :param string $table:
-      :param array/object $data:
-      :param string $url: optional
-      :returns: an array of Httpful response objects.
-
 For more information, you can see the `documentation for Httpful <http://phphttpclient.com/>`_ or `view the source on Github <https://github.com/RJMetrics/RJMetrics-php>`_.
 
 
@@ -107,28 +76,6 @@ Now, you can use the library like this:
     client = Client.new(client_id, api_key)
 
     # do stuff with client
-
-Usage
-----------------------------
-
-The Ruby client has three methods: ``initialize``, ``authenticated?``, and ``pushData``.
-    
-  .. rb:method:: initialize(client_id, api_key, timeout_in_seconds = 10)
-
-      Constructs a Client instance if it receives valid arguments or will raise an ArgumentError.
-
-      :client_id: [Integer] your RJMetrics Client ID
-      :api_key: [String] your RJMetrics API Key
-      :timeout_in_seconds: [Integer] seconds to wait for API responses or nil
-
-  .. rb:method:: pushData(table_name, data, url = API_BASE)
-
-      Sends data to RJMetrics Data Import API.
-
-      :table_name: [String] the table name you wish to store the data
-      :data: [Hashamp] or Array of Hashmaps of data points that will get sent
-      :url: [String] Import API url or nil
-      :returns: [Array] results of each request to RJMetrics Data Import API     
 
 For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
 

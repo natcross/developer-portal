@@ -77,4 +77,4 @@ You can always request to disable an API key by `contacting our support team <ma
 PCI
 -----------------------------
 
-RJMetrics is PCI level 3 compliant.
+RJMetrics is PCI level 4 compliant.
