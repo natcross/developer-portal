@@ -315,6 +315,11 @@ This example is included with the :doc:`client libraries <libraries>` or can be 
     > (require :reload 'examples.users-table)
     > (run)
 
+  .. code-block:: ruby
+
+    bundle install
+    ruby users-table.rb
+
 
 Create an Orders Table
 ======================
