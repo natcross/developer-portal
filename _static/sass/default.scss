@@ -32,6 +32,7 @@ h1 { font-size: 3em; }
 h2 { font-size: 2em; }
 dt { font-weight: normal; }
 p { padding-bottom: 20px; }
+
 /**** Sphinx specific items ***/
 .admonition-title { 
     font-weight: bold;
@@ -42,13 +43,15 @@ p { padding-bottom: 20px; }
 }
 /**** End Sphinx items ***/
 
-.content {
-    padding: 0 0 0 35px
-}
-
 .intro {
     p {
         font-size: 1.2em;
+    }
+}
+
+.content {
+    > .section > .section {
+        padding: 0;
     }
 }
 
@@ -178,6 +181,11 @@ blockquote {
     height: 100%;
 }
 
+.navbar-collapse {
+    padding: 0;
+    background: none;
+}
+
 .sphinxsidebarwrapper {
     height: 100%;
 
@@ -276,7 +284,7 @@ blockquote {
 
     .content {
         position: absolute;
-        left: 225px;
+        left: 250px;
     }
 
     .rjm-sidebar {

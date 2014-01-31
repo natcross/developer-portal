@@ -5,35 +5,35 @@
 
 .. rst-class:: col-md-12
 
-
-What is this thing?
 ==================================
-Welcome to the RJMetrics Developer Center. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Put Your Data to Work
+==================================
+Welcome to the RJMetrics Developer Center. Learn how to enhance your business intelligence by moving data from your own systems into the RJMetrics data warehouse. Get started with examples, client libraries and detailed API documentation below.
 
-.. rst-class:: col-md-6
+.. rst-class:: col-md-6 summary
 
 Get Started
-==================================
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+-----------------------------------
+New to the RJMetrics Import API? These step by step guides will teach you the ropes and we'll have you sending data to RJMetrics in no time. Pick your favorite programming language and view specific examples for working with the RJMetrics Data Import API. :doc:`Read More <getting_started>`
 
 
-.. rst-class:: col-md-6
+.. rst-class:: col-md-6 summary
 
 API Documentation
-==================================
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
+-----------------------------------
+The RJMetrics Data Import API allows you to push arbitrary data into your RJMetrics data warehouse. We built it using REST principles for simplicity. Find out the nitty gritty details of our API so you can build your own custom solution. :doc:`Read More <libraries>`
 
-.. rst-class:: col-md-6
+.. rst-class:: col-md-6 summary
 
 Libraries
-==================================
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+-----------------------------------
+To make integrating with the Import API as easy as possible, we’ve created some client libraries for you to use. :doc:`Read More <libraries>`
 
-.. rst-class:: col-md-6
+.. rst-class:: col-md-6 summary
 
 FAQ/Support
-==================================
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+-----------------------------------
+Find out the answers to some common questions. :doc:`Read More <faqs>`
 
 .. toctree::
    :hidden:

@@ -1,6 +1,7 @@
 .. _libraries:
 .. highlight:: bash 
 
+.. rst-class:: col-md-12
 ******************************
 Libraries
 ******************************

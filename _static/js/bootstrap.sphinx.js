@@ -53,8 +53,8 @@
 
   $(document).ready(function () {
     // Sidebar TOC.
-    $(".sphinxsidebarwrapper > ul").addClass("nav nav-pills nav-stacked sidenav");
-    $(".sphinxsidebarwrapper > ul .current").addClass("active");
+    $("#sidebar-nav > ul").addClass("nav nav-pills nav-stacked sidenav");
+    $("#sidebar-nav > ul .current").addClass("active");
     // Local TOC.
     patchToc($("ul.localtoc"), 2);
 

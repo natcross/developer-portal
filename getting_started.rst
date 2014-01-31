@@ -1,6 +1,7 @@
 .. _getting_started:
 .. highlight:: bash 
 
+.. rst-class:: col-md-12
 ******************************
 Getting Started
 ******************************
