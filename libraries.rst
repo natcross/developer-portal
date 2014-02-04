@@ -2,9 +2,12 @@
 .. highlight:: bash 
 
 .. rst-class:: col-md-12
+
 ******************************
 Libraries
 ******************************
+
+.. rst-class:: section
 
 To make integrating with the Import API as easy as possible, we've created some client libraries for you to use. Have your own library? Want to contribute to ours? `Reach out to us! <mailto:support@rjmetrics.com>`_
 

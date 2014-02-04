@@ -6,6 +6,8 @@
 Getting Started
 ******************************
 
+.. rst-class:: section
+
 Before you begin, you should checkout the :doc:`libraries` section to install your chosen client library. Here are some quick examples that can get you started with the Import API
 
 ------------

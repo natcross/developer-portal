@@ -5,6 +5,8 @@
 FAQs
 ******************************
 
+.. rst-class:: section
+
 Have a question that you don't see answered here? While we strive to make our docs as self-explanatory as possible, we're always looking for ways to be more clear. Got an idea on how to do that? `Give us a shout <mailto:support@rjmetrics.com>`_.
 
 ------------

@@ -254,11 +254,11 @@ blockquote {
 }
 
 #api-documentation > .row .examples { 
-    top: -106px;
+    top: 0;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: -525px;
-    padding-bottom: 500px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
 
     .code-box {
         .nav {
@@ -349,6 +349,10 @@ p.compound-last {
     }
 
     #api-documentation > .row .examples { 
+        top: -106px;
+        margin-bottom: -525px;
+        padding-bottom: 500px;
+
         .code-box {
             .nav {
                 &.affix-top {

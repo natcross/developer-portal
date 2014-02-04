@@ -7898,11 +7898,11 @@ blockquote {
 
 /* line 256, sass/default.scss */
 #api-documentation > .row .examples {
-  top: -106px;
+  top: 0;
   padding-left: 0;
   padding-right: 0;
-  margin-bottom: -525px;
-  padding-bottom: 500px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 /* line 264, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav {
@@ -7996,7 +7996,13 @@ p.compound-last {
     padding-bottom: 400px;
   }
 
-  /* line 354, sass/default.scss */
+  /* line 351, sass/default.scss */
+  #api-documentation > .row .examples {
+    top: -106px;
+    margin-bottom: -525px;
+    padding-bottom: 500px;
+  }
+  /* line 358, sass/default.scss */
   #api-documentation > .row .examples .code-box .nav.affix-top {
     visibility: visible;
   }

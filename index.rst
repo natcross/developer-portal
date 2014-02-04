@@ -8,6 +8,9 @@
 ==================================
 Put Your Data to Work
 ==================================
+
+.. rst-class:: section
+
 Welcome to the RJMetrics Developer Center. Learn how to enhance your business intelligence by moving data from your own systems into the RJMetrics data warehouse. Get started with examples, client libraries and detailed API documentation below.
 
 ------------
