@@ -5,7 +5,8 @@ $blue: #309CC8;
 $orange: #DC6B38;
 $grey-dark: #444444;
 $grey-medium: #868279;
-$grey-light: #F4F4F4;
+$grey-light: #D2D0D0;
+$grey-lighter: #FEFEFE;
 $white: #FFF;
 $black: #000;
 
@@ -25,14 +26,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2 {
-    margin-top: 50px;
+    margin-top: 37px;
 }
 
 h1 { font-size: 3em; }
 h2 { font-size: 2em; }
+h3 { 
+    margin-bottom: 0px; 
+    margin-top: 25px;
+}
 dt { font-weight: normal; }
-p { padding-bottom: 20px; }
-
+p { margin: 20px 0; }
+ul {
+    padding-left: 50px;
+}
+pre { background: $grey-lighter; }
 /**** Sphinx specific items ***/
 .admonition-title { 
     font-weight: bold;
@@ -52,6 +60,7 @@ p { padding-bottom: 20px; }
 .content {
     > .section > .section {
         padding: 0;
+        margin-bottom: 50px;
     }
 }
 
@@ -59,13 +68,13 @@ p { padding-bottom: 20px; }
     display: none;
 }
 
-.dashed {
-  border-top: 1px dashed #d2d0d0;
+.dashed, hr {
+  border-top: 1px dashed $grey-light;
 }
 
 blockquote {
     border: none;
-    margin-left: 30px;
+    margin-left: 10px;
 }
 
 .logosquare {
@@ -114,11 +123,15 @@ blockquote {
             padding: 10px 40px;
             color: $grey-dark;
         }
+
+        + li {
+            margin-top: 0;
+        }
     }
 }
 
 .code-box {
-    background: $grey-light;
+    background: $grey-lighter;
     border: 1px solid #BFBFBF;
     border-radius: 7px;
     margin-bottom: 20px;
@@ -170,6 +183,7 @@ blockquote {
 
         pre {
             border: none;
+            background: $grey-lighter;
             margin: 0;
             padding: 0;
         }
@@ -188,13 +202,15 @@ blockquote {
 .sphinxsidebarwrapper {
     height: 100%;
 
-    ul {
-        height: 100%;
+    li {
+        list-style: none;
+        padding-top: 0px;
     }
 
-    ul, li {
-        list-style: none;
-        padding-top: 10px;
+    ul {
+        height: 100%;
+        padding-top: 20px;
+        list-style: none;        
     }
 
     .toctree-l1 {
@@ -207,6 +223,17 @@ blockquote {
 
                 a {
                     color: $grey-medium;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: $grey-dark;
+
+                        &:after {
+                            content: '•';
+                            position: relative;
+                            left: 10px;
+                        }
+                    }
                 }
             }
         }
@@ -218,12 +245,20 @@ blockquote {
     margin-left: 0;
 }
 
+#api-documentation hr {
+    width: 50%;
+}
+
+#api-documentation > .row {
+    margin-bottom: 50px;
+}
+
 #api-documentation > .row .examples { 
-    top: -120px;
+    top: -106px;
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: -225px;
-    padding-bottom: 200px;
+    margin-bottom: -525px;
+    padding-bottom: 500px;
 
     .code-box {
         .nav {
@@ -247,7 +282,7 @@ blockquote {
 .section {
     $marginHorizontal: 30px;
 
-    h1, h2, h3, p, .code-box, .alert {
+    h1, h2, h3, p, .code-box, .alert, hr {      
         margin-left: $marginHorizontal;
         margin-right: $marginHorizontal;
     }
@@ -255,6 +290,21 @@ blockquote {
     .split-pane {
         margin-right: 0;
     }
+}
+
+.alert {
+    
+    margin-bottom: 0;
+
+    > p {
+        margin: 0;
+    }
+}
+p.compound-first {
+    margin-top: 10px;
+}
+p.compound-last {
+    margin-bottom: 0;
 }
 
 .examples {

@@ -6,11 +6,9 @@
 Getting Started
 ******************************
 
-Before you begin, you should checkout the :doc:`libraries` section to install your chosen client library.
+Before you begin, you should checkout the :doc:`libraries` section to install your chosen client library. Here are some quick examples that can get you started with the Import API
 
-Here are some quick examples that can get you started with the Import API
-
-.. _installing-docdir:
+------------
 
 Create a Users Table
 ====================
@@ -321,6 +319,7 @@ This example is included with the :doc:`client libraries <libraries>` or can be 
     bundle install
     ruby users-table.rb
 
+------------
 
 Create an Orders Table
 ======================

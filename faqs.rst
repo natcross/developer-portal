@@ -5,7 +5,9 @@
 FAQs
 ******************************
 
-.. _installing-docdir:
+Have a question that you don't see answered here? While we strive to make our docs as self-explanatory as possible, we're always looking for ways to be more clear. Got an idea on how to do that? `Give us a shout <mailto:support@rjmetrics.com>`_.
+
+------------
 
 General
 =============================
@@ -40,6 +42,7 @@ Using the Import API requires a certain level of technical expertise. Someone co
 
 If the data in question is a medium to large data set (>10M rows), and in a database, it is likely better to set up a direct database connection.
 
+------------
 
 Troubleshooting
 =============================
@@ -54,6 +57,7 @@ I'm getting a 5xx error code, what do I do?
 
 You can try your request again. If the issue persists, please `contacting RJMetrics support <mailto:support@rjmetrics.com>`_.
 
+------------
 
 Security
 =============================

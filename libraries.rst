@@ -6,11 +6,9 @@
 Libraries
 ******************************
 
-Introduction
-=============================
-
 To make integrating with the Import API as easy as possible, we've created some client libraries for you to use. Have your own library? Want to contribute to ours? `Reach out to us! <mailto:support@rjmetrics.com>`_
 
+------------
 
 PHP
 =============================
@@ -48,7 +46,7 @@ Now, you can use the library in your script, like this:
 
 For more information, you can see the `documentation for Httpful <http://phphttpclient.com/>`_ or `view the source on Github <https://github.com/RJMetrics/RJMetrics-php>`_.
 
-
+------------
 
 Ruby
 =============================
@@ -79,6 +77,8 @@ Now, you can use the library like this:
 
 For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-ruby>`_.
 
+------------
+
 Javascript
 =============================
 
@@ -107,6 +107,8 @@ Now, you can use the library like this:
     # do stuff with client
 
 For more information, check out the `source code on Github <https://github.com/RJMetrics/RJMetrics-js>`_.
+
+------------
 
 Clojure
 =============================

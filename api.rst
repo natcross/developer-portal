@@ -4,13 +4,18 @@
 *****************************
 API Documentation
 *****************************
+
 .. split-pane::
 
-  .. container::
+  .. compound::
+    The RJMetrics Data Import API allows you to push arbitrary data into your RJMetrics data warehouse. We built it using REST principles for simplicity.
 
+    This API accepts and returns valid JSON for all its methods. Each method uses a standard HTTP verb (GET/POST/PUT) and uses standard HTTP response codes for returning statuses.
   .. code-box::
 
     .. code-block:: bash
+
+      curl -v https://connect.rjmetrics.com/
 
     .. code-block:: php
 
@@ -18,22 +23,8 @@ API Documentation
 
     .. code-block:: clojure
 
-=============================
-Overview
-=============================
 
-.. split-pane::
-  
-  .. compound::
-    The RJMetrics Data Import API allows you to push arbitrary data into your RJMetrics data warehouse. We built it using REST principles for simplicity.
-
-    This API accepts and returns valid JSON for all its methods. Each method uses a standard HTTP verb (GET/POST/PUT) and uses standard HTTP response codes for returning statuses.
-
-  .. code-box::
-
-    .. code-block:: bash
-
-      curl -v https://connect.rjmetrics.com/
+------------
 
 .. _api-authentication:
 =============================
@@ -75,6 +66,8 @@ Authentication
               ;; connected successfully
               ))
 
+------------
+
 =============================
 Return Codes
 =============================
@@ -96,6 +89,8 @@ Return Codes
     404 Not Found - The resource you are looking for does not exist.
     500 Server Error - Something went wrong on RJMetrics' end.
 
+------------
+
 =============================
 Versioning
 =============================
@@ -111,6 +106,8 @@ Versioning
   .. code-block::
 
     .. code-box:: bash
+
+------------
 
 =============================
 Test Environment
@@ -154,6 +151,8 @@ Test Environment
                              test-data
                              rjmetrics/SANDBOX-BASE))
 
+------------
+
 =============================
 Methods
 =============================
@@ -165,11 +164,7 @@ Status
 
   .. compound::
 
-    You can always check the status of the Data Import API.
-
-    This is called when you instantiate the client.
-
-    This will return a ``200 OK`` response if the API is operational.
+    You can always check the status of the Data Import API. This is called when you instantiate the client. This will return a ``200 OK`` response if the API is operational.
 
   .. code-box::
 
@@ -201,9 +196,7 @@ Upsert
     .. important::
       Each data point in your data warehouse will be uniquely indexed by the fields specified in ``keys``. If a new data point has keys that conflict with a pre-existing data point, the old data point will be replaced.
 
-    **Tables**
-
-    Table in the Data Import API are schemaless. There is no command to create or destroy a table - you can push data to any table name and it will be dynamically generated.
+    Tables in the Data Import API are schemaless. There is no command to create or destroy a table - you can push data to any table name and it will be dynamically generated.
 
     Here are some guidelines for managing tables:
 
