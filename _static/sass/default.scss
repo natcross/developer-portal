@@ -51,6 +51,10 @@ pre { background: $grey-lighter; }
 }
 /**** End Sphinx items ***/
 
+.summary:nth-of-type(2n+3) {
+    clear: left;
+}
+
 .intro {
     p {
         font-size: 1.2em;
@@ -224,12 +228,21 @@ blockquote {
                 a {
                     color: $grey-medium;
 
+                    &:after {
+                        content: '•';
+                        position: relative;
+                        left: 0px;
+                        color: #f8f8f8;
+                        -webkit-transition: all 0.3s;
+                    }
+
                     &:hover {
                         text-decoration: none;
                         color: $grey-dark;
 
                         &:after {
                             content: '•';
+                            color: $grey-dark;
                             position: relative;
                             left: 10px;
                         }
@@ -245,20 +258,15 @@ blockquote {
     margin-left: 0;
 }
 
-#api-documentation hr {
-    width: 50%;
-}
-
 #api-documentation > .row {
     margin-bottom: 50px;
 }
 
 #api-documentation > .row .examples { 
     top: 0;
-    padding-left: 0;
-    padding-right: 0;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    background: none;
 
     .code-box {
         .nav {
@@ -310,6 +318,7 @@ p.compound-last {
 .examples {
     background: $grey-dark;
     color: $white;
+    margin-top: 30px;
 
     .code-box {
         background: none;
@@ -344,19 +353,29 @@ p.compound-last {
     }
 
     .examples {
+        margin-top: 0;
         margin-bottom: -400px;
         padding-bottom: 400px;   
     }
 
-    #api-documentation > .row .examples { 
-        top: -106px;
-        margin-bottom: -525px;
-        padding-bottom: 500px;
+    #api-documentation {
+        hr {
+            width: 50%;
+        }
 
-        .code-box {
-            .nav {
-                &.affix-top {
-                    visibility: visible;
+        > .row .examples { 
+            top: -106px;
+            margin-bottom: -525px;
+            padding-bottom: 500px;
+            padding-left: 0;
+            padding-right: 0;        
+            background: $grey-dark;
+
+            .code-box {
+                .nav {
+                    &.affix-top {
+                        visibility: visible;
+                    }
                 }
             }
         }

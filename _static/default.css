@@ -7691,34 +7691,39 @@ pre {
 }
 
 /**** End Sphinx items ***/
-/* line 55, sass/default.scss */
+/* line 54, sass/default.scss */
+.summary:nth-of-type(2n+3) {
+  clear: left;
+}
+
+/* line 59, sass/default.scss */
 .intro p {
   font-size: 1.2em;
 }
 
-/* line 61, sass/default.scss */
+/* line 65, sass/default.scss */
 .content > .section > .section {
   padding: 0;
   margin-bottom: 50px;
 }
 
-/* line 67, sass/default.scss */
+/* line 71, sass/default.scss */
 .headerlink {
   display: none;
 }
 
-/* line 71, sass/default.scss */
+/* line 75, sass/default.scss */
 .dashed, hr {
   border-top: 1px dashed #d2d0d0;
 }
 
-/* line 75, sass/default.scss */
+/* line 79, sass/default.scss */
 blockquote {
   border: none;
   margin-left: 10px;
 }
 
-/* line 80, sass/default.scss */
+/* line 84, sass/default.scss */
 .logosquare {
   padding: 65px 20px;
   height: 200px;
@@ -7730,23 +7735,23 @@ blockquote {
   background-color: #309cc8;
 }
 
-/* line 91, sass/default.scss */
+/* line 95, sass/default.scss */
 .read-more {
   color: #dc6b38;
   text-decoration: underline;
 }
 
-/* line 96, sass/default.scss */
+/* line 100, sass/default.scss */
 .nav-pills {
   font-size: 1.2em;
 }
-/* line 101, sass/default.scss */
+/* line 105, sass/default.scss */
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover {
   font-weight: bold;
   color: #444444;
   background-color: inherit;
 }
-/* line 106, sass/default.scss */
+/* line 110, sass/default.scss */
 .nav-pills > li.active > a:after, .nav-pills > li.active > a:hover:after {
   content: '';
   position: relative;
@@ -7760,24 +7765,24 @@ blockquote {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
-/* line 122, sass/default.scss */
+/* line 126, sass/default.scss */
 .nav-pills > li a {
   padding: 10px 40px;
   color: #444444;
 }
-/* line 127, sass/default.scss */
+/* line 131, sass/default.scss */
 .nav-pills > li + li {
   margin-top: 0;
 }
 
-/* line 133, sass/default.scss */
+/* line 137, sass/default.scss */
 .code-box {
   background: #fefefe;
   border: 1px solid #BFBFBF;
   border-radius: 7px;
   margin-bottom: 20px;
 }
-/* line 139, sass/default.scss */
+/* line 143, sass/default.scss */
 .code-box .nav {
   background: #E3E3E3;
   width: 100%;
@@ -7786,7 +7791,7 @@ blockquote {
   clear: both;
   overflow: hidden;
 }
-/* line 147, sass/default.scss */
+/* line 151, sass/default.scss */
 .code-box .nav li {
   float: left;
   margin: 5px 5px;
@@ -7795,25 +7800,25 @@ blockquote {
   font-weight: 400;
   text-transform: uppercase;
 }
-/* line 155, sass/default.scss */
+/* line 159, sass/default.scss */
 .code-box .nav li a {
   padding: 2px 10px;
 }
-/* line 158, sass/default.scss */
+/* line 162, sass/default.scss */
 .code-box .nav li a:hover {
   background: #444444;
   border-radius: 5px;
   color: #C5D0D3;
   cursor: pointer;
 }
-/* line 167, sass/default.scss */
+/* line 171, sass/default.scss */
 .code-box .nav li.active a {
   background: #444444;
   border-radius: 5px;
   color: #C5D0D3;
   cursor: pointer;
 }
-/* line 177, sass/default.scss */
+/* line 181, sass/default.scss */
 .code-box .code {
   clear: both;
   border: none;
@@ -7821,7 +7826,7 @@ blockquote {
   margin: 0;
   padding: 15px 20px;
 }
-/* line 184, sass/default.scss */
+/* line 188, sass/default.scss */
 .code-box .code pre {
   border: none;
   background: #fefefe;
@@ -7829,146 +7834,150 @@ blockquote {
   padding: 0;
 }
 
-/* line 193, sass/default.scss */
+/* line 197, sass/default.scss */
 .sphinxsidebar {
   height: 100%;
 }
 
-/* line 197, sass/default.scss */
+/* line 201, sass/default.scss */
 .navbar-collapse {
   padding: 0;
   background: none;
 }
 
-/* line 202, sass/default.scss */
+/* line 206, sass/default.scss */
 .sphinxsidebarwrapper {
   height: 100%;
 }
-/* line 205, sass/default.scss */
+/* line 209, sass/default.scss */
 .sphinxsidebarwrapper li {
   list-style: none;
   padding-top: 0px;
 }
-/* line 210, sass/default.scss */
+/* line 214, sass/default.scss */
 .sphinxsidebarwrapper ul {
   height: 100%;
   padding-top: 20px;
   list-style: none;
 }
-/* line 217, sass/default.scss */
+/* line 221, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul {
   padding: 0;
 }
-/* line 220, sass/default.scss */
+/* line 224, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li {
   font-size: 0.75em;
   padding: 0 0 5px 0;
 }
-/* line 224, sass/default.scss */
+/* line 228, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li a {
   color: #868279;
 }
-/* line 227, sass/default.scss */
+/* line 231, sass/default.scss */
+.sphinxsidebarwrapper .toctree-l1 ul li a:after {
+  content: '•';
+  position: relative;
+  left: 0px;
+  color: #f8f8f8;
+  -webkit-transition: all 0.3s;
+}
+/* line 239, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li a:hover {
   text-decoration: none;
   color: #444444;
 }
-/* line 231, sass/default.scss */
+/* line 243, sass/default.scss */
 .sphinxsidebarwrapper .toctree-l1 ul li a:hover:after {
   content: '•';
+  color: #444444;
   position: relative;
   left: 10px;
 }
 
-/* line 243, sass/default.scss */
+/* line 256, sass/default.scss */
 #wrapper > .row {
   margin-right: 0;
   margin-left: 0;
 }
 
-/* line 248, sass/default.scss */
-#api-documentation hr {
-  width: 50%;
-}
-
-/* line 252, sass/default.scss */
+/* line 261, sass/default.scss */
 #api-documentation > .row {
   margin-bottom: 50px;
 }
 
-/* line 256, sass/default.scss */
+/* line 265, sass/default.scss */
 #api-documentation > .row .examples {
   top: 0;
-  padding-left: 0;
-  padding-right: 0;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  background: none;
 }
-/* line 264, sass/default.scss */
+/* line 272, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav {
   display: block;
   border-radius: 0;
   z-index: 100;
 }
-/* line 269, sass/default.scss */
+/* line 277, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav.affix {
   top: 0;
 }
-/* line 272, sass/default.scss */
+/* line 280, sass/default.scss */
 #api-documentation > .row .examples .code-box .nav.affix-top {
   visibility: hidden;
 }
-/* line 276, sass/default.scss */
+/* line 284, sass/default.scss */
 #api-documentation > .row .examples .code-box .tab-content {
   display: none;
 }
 
-/* line 285, sass/default.scss */
+/* line 293, sass/default.scss */
 .section h1, .section h2, .section h3, .section p, .section .code-box, .section .alert, .section hr {
   margin-left: 30px;
   margin-right: 30px;
 }
-/* line 290, sass/default.scss */
+/* line 298, sass/default.scss */
 .section .split-pane {
   margin-right: 0;
 }
 
-/* line 295, sass/default.scss */
+/* line 303, sass/default.scss */
 .alert {
   margin-bottom: 0;
 }
-/* line 299, sass/default.scss */
+/* line 307, sass/default.scss */
 .alert > p {
   margin: 0;
 }
 
-/* line 303, sass/default.scss */
+/* line 311, sass/default.scss */
 p.compound-first {
   margin-top: 10px;
 }
 
-/* line 306, sass/default.scss */
+/* line 314, sass/default.scss */
 p.compound-last {
   margin-bottom: 0;
 }
 
-/* line 310, sass/default.scss */
+/* line 318, sass/default.scss */
 .examples {
   background: #444444;
   color: white;
+  margin-top: 30px;
 }
-/* line 314, sass/default.scss */
+/* line 323, sass/default.scss */
 .examples .code-box {
   background: none;
   border: none;
   margin-left: 0;
   margin-right: 0;
 }
-/* line 320, sass/default.scss */
+/* line 329, sass/default.scss */
 .examples .code-box .nav {
   display: none;
 }
-/* line 324, sass/default.scss */
+/* line 333, sass/default.scss */
 .examples .code-box pre {
   background: none;
   font-size: 0.8em;
@@ -7976,13 +7985,13 @@ p.compound-last {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 334, sass/default.scss */
+  /* line 343, sass/default.scss */
   .content {
     position: absolute;
     left: 250px;
   }
 
-  /* line 339, sass/default.scss */
+  /* line 348, sass/default.scss */
   .rjm-sidebar {
     top: 0;
     bottom: 0;
@@ -7990,19 +7999,27 @@ p.compound-last {
     width: 250px;
   }
 
-  /* line 346, sass/default.scss */
+  /* line 355, sass/default.scss */
   .examples {
+    margin-top: 0;
     margin-bottom: -400px;
     padding-bottom: 400px;
   }
 
-  /* line 351, sass/default.scss */
+  /* line 362, sass/default.scss */
+  #api-documentation hr {
+    width: 50%;
+  }
+  /* line 366, sass/default.scss */
   #api-documentation > .row .examples {
     top: -106px;
     margin-bottom: -525px;
     padding-bottom: 500px;
+    padding-left: 0;
+    padding-right: 0;
+    background: #444444;
   }
-  /* line 358, sass/default.scss */
+  /* line 376, sass/default.scss */
   #api-documentation > .row .examples .code-box .nav.affix-top {
     visibility: visible;
   }
