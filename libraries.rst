@@ -88,7 +88,7 @@ Javascript
 Installation
 -----------------------------
 
-The RJMetrics Javascript client library is available as a gem:
+The RJMetrics Javascript client library is available via npm:
 
   .. code-block:: bash
 
