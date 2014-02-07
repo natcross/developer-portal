@@ -6,12 +6,12 @@
 .. rst-class:: col-md-12
 
 ==================================
-Put Your Data to Work
+Welcome to the RJMetrics Developer Portal!
 ==================================
 
 .. rst-class:: section
 
-Welcome to the RJMetrics Developer Center. Learn how to enhance your business intelligence by moving data from your own systems into the RJMetrics data warehouse. Get started with examples, client libraries and detailed API documentation below.
+This is the one-stop-shop to help developers move data from their systems into the RJMetrics data warehouse.
 
 ------------
 
@@ -19,14 +19,14 @@ Welcome to the RJMetrics Developer Center. Learn how to enhance your business in
 
 Get Started
 -----------------------------------
-New to the RJMetrics Import API? These step by step guides will teach you the ropes and we'll have you sending data to RJMetrics in no time. Pick your favorite programming language and view specific examples for working with the RJMetrics Data Import API. :doc:`Read More <getting_started>`
+If you're new to the RJMetrics Import API then these step by step guides are the place to get started. We'll teach you the ropes and have you sending data to RJMetrics in no time. :doc:`Read More <getting_started>`
 
 
 .. rst-class:: col-md-6 summary
 
 API Documentation
 -----------------------------------
-The RJMetrics Data Import API allows you to push arbitrary data into your RJMetrics data warehouse. We built it using REST principles for simplicity. Find out the nitty gritty details of our API so you can build your own custom solution. :doc:`Read More <libraries>`
+If you're interested in build a custom solution then you'll want the nitty gritty details in our API documentation. Here's everything you need to know about making magic with the RJMetrics Data Import API. :doc:`Read More<api>`
 
 .. rst-class:: col-md-6 summary
 
@@ -36,9 +36,9 @@ To make integrating with the Import API as easy as possible, we’ve created som
 
 .. rst-class:: col-md-6 summary
 
-FAQ/Support
+FAQ
 -----------------------------------
-Find out the answers to some common questions. :doc:`Read More <faqs>`
+Get the answers to common questions. :doc:`Read More <faqs>`
 
 .. toctree::
    :hidden:
