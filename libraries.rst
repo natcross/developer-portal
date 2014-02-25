@@ -73,7 +73,7 @@ Now, you can use the library like this:
 
   .. code-block:: ruby
 
-    require "rjmetrics-client"
+    require "rjmetrics_client"
     client = RJMetricsClient.new(client_id, api_key)
 
     # do stuff with client
