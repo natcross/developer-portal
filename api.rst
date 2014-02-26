@@ -55,7 +55,7 @@ Authentication
 
     .. code-block:: ruby
 
-      client = Client.new(client_id, api_key)
+      client = RJMetricsClient.new(client_id, api_key)
       if client.authenticated?
         # connected successfully
 

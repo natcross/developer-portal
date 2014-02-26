@@ -59,8 +59,8 @@ First, let's lay out a template for pushing the data. We'll make sure the client
 
   .. code-block:: ruby
 
-    require "rjmetrics-client/client"
-    client = Client.new(your-client-id, "your-api-key")
+    require "rjmetrics_client"
+    client = RJMetricsClient.new(your-client-id, "your-api-key")
 
     # make sure the client is authenticated before we do anything
     if client.authenticated?
@@ -260,8 +260,8 @@ Putting it all together, we incorporate the `syncUser` function into our origina
 
   .. code-block:: ruby
 
-    require "rjmetrics-client/client"
-    client = Client.new(your-api-key, "your-client-id")
+    require "rjmetrics_client"
+    client = RJMetricsClient.new(your-api-key, "your-client-id")
 
     # let's define some fake users
     fake_users = [
@@ -496,8 +496,8 @@ Now, we can plug this into the same template from the users table:
 
   .. code-block:: ruby
 
-    require "rjmetrics-client/client"
-    client = Client.new(your-client-id, "your-api-key")
+    require "rjmetrics_client"
+    client = RJMetricsClient.new(your-client-id, "your-api-key")
 
     fake_orders = [
       {:id => 1, :user_id => 1, :value => 58.40,  :sku => "milky-white-suede-shoes"},
